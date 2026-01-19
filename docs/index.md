@@ -24,16 +24,16 @@ Professor Kevin Nichols<br>
 
 ## Team Introduction
 **Team XPED (302)** is committed to delivering an innovative exploration device through collaborative engineering, modular PCB design, and tactical demo execution.  
-We prioritize standards-based UART communication, serial sensor/actuator integration, and role rotation as we develop the **R6 Siege Recon Amphibot**—a fragile FPV scout with land/water capabilities.  
-Our work follows open communication, shared GitHub repositories, weekly syncs, and measurable milestones toward May 1st showcase success.
+We prioritize standards-based UART communication, serial sensor/actuator integration, and role rotation as we develop the **R6 Siege Recon Amphibot**, a fragile FPV scout with land/water capabilities.  
+Our work follows open communication, shared GitHub repositories, weekly syncs, and measurable milestones toward showcase success.
 
 ---
 
 ## Project Summary
 
-Our project delivers the **R6 Siege Recon Amphibot**, a 3-PCB modular scout mimicking Rainbow Six Siege drone mechanics: camera/IMU/gas scanning, wheel propulsion on land, flip-out fins for water, and MQTT wireless control.  
-The UART-daisy-chained system (Sensor -> Actuator -> Ctrl -> HMI) enables real-time hazard recon with PID pathing and fragile "destroy" feedback, meeting EGR314 requirements without waterproofing.  
-Through breadboard validation, Cadence PCB iteration, and lab demos (table breach -> tub swim), we create a scalable tactical exploration platform for the Innovation Showcase.
+Our project delivers the **R6 Siege Recon Amphibot**, a 3 PCB modular scout mimicking Rainbow Six Siege drone mechanics: camera/IMU/gas scanning, wheel propulsion on land, flip-out fins for water, and MQTT wireless control.  
+The UART daisy-chained system (Sensor → Actuator → Ctrl → HMI) enables real-time hazard recon with PID pathing and fragile "destroy" feedback, meeting EGR314 requirements without waterproofing.  
+Through breadboard validation, Cadence PCB iteration, and lab demos (table breach → tub swim), we create a scalable tactical exploration platform for the Innovation Showcase.
 
 ---
 
@@ -43,7 +43,7 @@ Through breadboard validation, Cadence PCB iteration, and lab demos (table breac
 | ---------------------- | -----------------------|
 | Mihir Patel                | [Mihir-Patel-64.github.io](https://mihir-patel-64.github.io/) |
 | Lakshanand Sugumar                | [lakshanandsugumar.github.io](https://lakshanandsugumar.github.io) |
-| Raunak Singh                | link |
+| Raunak Singh                | [ronnie772.github.io](https://ronnie772.github.io/Ronnie772Datasheet/) |
 
 ---
 
