@@ -40,8 +40,8 @@ _**Appendix Table 2**: Team Member Communication Modes_
 |Name                 | First Choice Communication | Second Choice Communication | Third Choice Communication |
 |---------------------|----------------------------|-----------------------------|----------------------------|
 |Mihir Patel |  Text Message | Slack | Email |
-|Zane Brauer |  Text Message | Email | Discord |
-|Adrian Perez |  Text Message | Discord | Email |
+|Raunak Singh |  Text Message | Email | Discord |
+|Lakshanand Sugumar |  Text Message | Discord | Email |
 
 ### Main Method for Group Communication
 
