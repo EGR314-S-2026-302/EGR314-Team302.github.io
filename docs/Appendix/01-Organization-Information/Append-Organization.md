@@ -113,4 +113,4 @@ _**Table Legend for Appendix Table 3**_
 
 We, undersigned, agree to abide by this Team Charter:
 **Mihir Patel** | **Raunak Singh** | **Lakshanand Sugumar**
-*Jan 18, 2026* 
+- *Jan 18, 2026* 
