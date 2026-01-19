@@ -1,20 +1,21 @@
 ---
 title: Team Organization
 tags:
-- tag1
+- EGR314
+- Team XPED
 ---
 
 ## Team Charter
 
-> "ASU is a comprehensive public research university, measured not by whom it excludes, but by whom it includes and how they succeed; advancing research and discovery of public value; and assuming fundamental responsibility for the economic, social, cultural and overall health of the communities it serves." (ASU's Charter)
+> **"Team XPED commits to modular mastery and tactical innovation, delivering the R6 Recon Amphibot through UART standards, equitable rotations, and relentless demo execution—exploring hazards as a united engineering force."**
 
-The team came about this team charter ....(add in your words datails on why this is your team's charter)
+Started Jan 18 Discord: Brainstormed "Exploration Device= tool for difficult terrains," listing underwater sky-drop mappers, volcanic probes, cave robots, modular bunches, mothership jettison chains (sonar stages → WiFi surface), R6 drone/rover hybrids (wheels+propellers/camera detach). Voted charter to unify process around EGR314 UART modularity for tactical showcase success.
 
 ## Product Mission Statement
 
-Describe the distilled purpose, function, or reason for your product to exist. From this form a team mission statement. Google's mission statement is:
+> **"The R6 Siege Recon Amphibot scouts hazardous land/water terrains with fused FPV sensors and wireless commands, providing operators actionable data from environments too perilous for humans—modular, throwable, tactical."**
 
- > "Google's mission is to organize the world's information and make it universally accessible and useful."
+From [ProductPlan](https://www.productplan.com/glossary/product-mission/): Focused "why" (safe recon). Post-charter poll narrowed underwater/volcanic/cave bunches + mothership stages to R6 amphibot (wheels land, fins/propellers water, UART mothership link)—prioritizes operator intel over complexity.
 
 ## Other Organizational Information
 
