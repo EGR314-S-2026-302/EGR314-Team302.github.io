@@ -66,10 +66,10 @@ _**Appendix Table 3**: Weekly Schedule_
 | 12:00 PM | R | M,R | - | M,L | L | M,R,L | R,L |
 | 1:00 PM | - | M | R | M | L,R | M,R,L | R,L |
 | 2:00 PM | L | - | R | - | L,R | M,R,L | R,L |
-| 3:00 PM | L | - | R,L | - | L,M | M,R,L | R,L |
-| 4:00 PM | L | L | M,L | L | M,L | M,R,L | R,L |
-| 5:00 PM | L | L | M,L | L | M,L | M,R,L | R,L |
-| 6:00 PM | L | L | M,L | L | M,L | M,R,L | R,L |
+| 3:00 PM | L | - | R,L | - | L,M,R | M,R,L | R,L |
+| 4:00 PM | L | L | M,L | L | M,L,R | M,R,L | R,L |
+| 5:00 PM | L | L | M,L | L | M,L,R | M,R,L | R,L |
+| 6:00 PM | L | L | M,L | L | M,L,R | M,R,L | R,L |
 | 7:00 PM | - | L | M,R,L | L | M,R,L | L,R | R,L |
 | 8:00 PM | - | L | R,L | L | R,L | R,L | M,L |
 | 9:00 PM | - | - | R | - | L | R,L | L,M |
@@ -85,7 +85,7 @@ _**Table Legend for Appendix Table 3**_
 
 ### Meeting Coordination
 
-1. **Reminders**: Google Calender reminders 24hrs in advance.
+1. **Reminders**: Google Calendar reminders 24hrs in advance.
 2. **Changing Times**: Adjustments made via majority vote.
 3. **Meeting Format**: In-person preferred, Zoom as backup.
 4. **Shared Availability**: Confirmed at least 4 overlapping hours per week outside of class. 
@@ -112,6 +112,5 @@ _**Table Legend for Appendix Table 3**_
 ## Signatures
 
 We, undersigned, agree to abide by this Team Charter:
-**Mihir Patel**, 
-**Raunak Singh**,
-**Lakshanand Sugumar**
+**Mihir Patel** | **Raunak Singh** | **Lakshanand Sugumar**
+*Jan 18, 2026* 
