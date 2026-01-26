@@ -322,7 +322,8 @@ This concept is built for situations where the environment is dangerous and the 
 | Safety & Durability   | Impact-resistant / shock-absorbing shell | Medium | Helps protect internal parts during drops and collisions.               |
 | Safety & Durability   | Enclosed electronics            | Medium   | Keeps debris and dirt away from sensitive components.                   |
 
-![Concept 3](<img width="965" height="1263" alt="image" src="https://github.com/user-attachments/assets/248d5213-70bc-4107-81c7-b88d84b41a94" />)
+![Concept 3](<img width="965" height="1263" alt="image" src="https://github.com/user-attachments/assets/d9ab52ff-6946-4e6a-af41-8395af7d042e" />
+)
 
 This concept is designed for fast deployment, simple operation, and strong situational awareness in hazardous environments. The throwable chassis lets an operator begin a mission immediately with minimal setup. Auto-leveling stabilizes the device  at landing and allows for an immediate drive-rady response, and reset-to-home returns it to a default ready state for the next operator. Omni-directional wheels allow precise positioning in tight spaces, while a low center of gravity reduces tipping risk during turns and bumps. A two-wheel efficient drive reduces power use, improving runtime and reliability.
 
