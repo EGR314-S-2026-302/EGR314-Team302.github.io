@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#header" class="md-skip">
+        <a href="#goal-of-the-exploration-device" class="md-skip">
           Skip to content
         </a>
       
@@ -492,17 +492,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Concept Generation and Design Ideation
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -513,32 +504,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#header" class="md-nav__link">
-    <span class="md-ellipsis">
-      Header
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -713,23 +678,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#header" class="md-nav__link">
-    <span class="md-ellipsis">
-      Header
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -752,10 +702,1140 @@
   
 
 
-  <h1>Concept Generation and Design Ideation</h1>
-
-<h2 id="header">Header</h2>
-<p>add text</p>
+<h1 id="goal-of-the-exploration-device">Goal of the Exploration Device</h1>
+<p>The goal of our exploration device is to safely collect meaningful environmental information from hazardous or inaccessible environments while minimizing operator risk and cognitive load. The Amphibot V1 is designed to scout unknown terrain, provide real-time visual and sensor feedback, and communicate system state clearly to a human operator. The device emphasizes modularity, rapid deployment, and observable cause-and-effect interactions between user input and system response.</p>
+<p>On top of actually working as an explorer, it's also meant to teach and demonstrate embedded systems design. Using UART-connected modular PCBs, sensor–actuator feedback loops, and straightforward human–machine interfaces, the project lets anyone watching easily understand how embedded systems sense their environment, make decisions, and take action in real-world situations.</p>
+<hr>
+<h1 id="intended-audience">Intended Audience</h1>
+<p>Real-time users break into two key groups.</p>
+<ol>
+<li>
+<p><strong>Engineering instructors, peers, and external reviewers</strong> who evaluate the system during the EGR314 Innovation Showcase. These users focus on system architecture, communication standards, robustness, and how effectively the design meets technical constraints.</p>
+</li>
+<li>
+<p><strong>Real-world end users</strong> such as emergency responders, industrial inspectors, or search-and-rescue teams who deploy the Amphibot V1 in hazardous environments such as flooded buildings, chemical spills, or collapsed structures. For them, reliable real-time intelligence (gas levels, obstacles, water depth) with minimal training is critical, enabling fast, informed decisions without risking human lives.</p>
+</li>
+</ol>
+<p>A <strong>secondary audience</strong> includes non-technical showcase visitors. For this group, the device provides obvious visual and behavioral cues (bright LEDs, smooth motion responses), intuitive control, and immediate feedback. As recommended by Bitgood’s Suggested Guidelines for Designing Interactive Exhibits, it accommodates a wide range of user familiarity by minimizing instructions, making correct operation visually apparent, and supporting safe use by non-experts.</p>
+<hr>
+<h2 id="brainstorm-process-overview">Brainstorm Process Overview</h2>
+<p>During our brainstorming session, we explored many different ideas related to building an exploration device. We defined an exploration device as any tool or system that can collect data from environments that are unknown, dangerous, or difficult for humans to access. Early on, we discussed whether our project should be a single standalone device or part of a larger system deployed from a “mothership,” such as a drone, rover, boat, or satellite. As we talked through these options, we quickly realized that our team size of three, limited budget, and overall project scope made very large or complex systems unrealistic for this semester. This pushed us toward ideas that are achievable now but still leave room for future expansion.</p>
+<p>We considered several possible environments for exploration, including underwater areas, volcanic regions, and caves. In all of these cases, the common goal was to collect data from places where sending a human would be unsafe or impractical. One idea that consistently stood out was modularity. Instead of building one large system that does everything, we explored using multiple smaller exploration units. This approach could allow better coverage of an area, provide backup if one unit fails, and support teamwork between devices for data collection and mapping.</p>
+<p>As our ideas developed further, we started refining the modular approach into more specific system concepts. One idea involved a water exploration setup with multiple stages or detachable subsystems. In this concept, nearby devices could communicate with each other using short-range methods such as sonar, while a surface unit would send collected data back to a mothership using Wi-Fi. At the same time, we explored a hybrid drone/rover concept inspired by R6, designed to work on both land and water. This concept focused on interchangeable components like wheels, propulsion systems, cameras, sonar, and wireless communication to increase flexibility while still being realistic to prototype.</p>
+<p>Throughout the brainstorming process, several design priorities stayed consistent across all concepts. We wanted to reduce the amount of direct human involvement, improve the accuracy and reliability of the data collected, support automation where possible, and make sure the system could be upgraded over time. Rather than building a one-time prototype, our goal was to create a platform that could improve through testing, modular hardware changes, and sensor-driven data collection. These priorities, along with ease of use and the need to demonstrate meaningful robotics and automation, led us toward an MVP-style approach: building a first version that fits within our constraints while still allowing future expansion.</p>
+<hr>
+<h1 id="generating-ideas">Generating Ideas</h1>
+<hr>
+<h2 id="easy-of-deployment-initial-use">Easy of Deployment &amp; Initial Use</h2>
+<table>
+<thead>
+<tr>
+<th>Need / Requirement</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Easy of Deployment &amp; Initial Use</td>
+<td>Throwable chassis</td>
+<td>Can be tossed into hazardous areas to start a mission quickly.</td>
+</tr>
+<tr>
+<td>Easy of Deployment &amp; Initial Use</td>
+<td>Compact body</td>
+<td>Fits through narrow openings and tight spaces.</td>
+</tr>
+<tr>
+<td>Easy of Deployment &amp; Initial Use</td>
+<td>One-button power on</td>
+<td>Starts up with a single press—no complicated steps.</td>
+</tr>
+<tr>
+<td>Easy of Deployment &amp; Initial Use</td>
+<td>Auto-leveling system</td>
+<td>Stabilizes itself after landing so it’s ready to drive.</td>
+</tr>
+<tr>
+<td>Easy of Deployment &amp; Initial Use</td>
+<td>Reset-to-home mode</td>
+<td>Returns to a default ready state for the next operator.</td>
+</tr>
+<tr>
+<td>Easy of Deployment &amp; Initial Use</td>
+<td>Magnetic docking pad</td>
+<td>Snaps onto a dock for quick pickup, storage, and charging.</td>
+</tr>
+<tr>
+<td>Easy of Deployment &amp; Initial Use</td>
+<td>Foldable components</td>
+<td>Folds down to reduce size during transport.</td>
+</tr>
+<tr>
+<td>Easy of Deployment &amp; Initial Use</td>
+<td>Lanyard-assisted drop</td>
+<td>Lets you lower it safely into shafts or openings.</td>
+</tr>
+<tr>
+<td>Easy of Deployment &amp; Initial Use</td>
+<td>Pre-armed standby mode</td>
+<td>Wakes up instantly after deployment with no extra setup.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="mobility-terrain-adaptability">Mobility &amp; Terrain Adaptability</h2>
+<table>
+<thead>
+<tr>
+<th>Need / Requirement</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operate confidently on land</td>
+<td>Single-handed operation</td>
+<td>Usable with one hand—helpful in stressful or constrained situations.</td>
+</tr>
+<tr>
+<td>Move reliably on flat surfaces</td>
+<td>Wheeled propulsion</td>
+<td>Simple, dependable driving on smooth terrain.</td>
+</tr>
+<tr>
+<td>Maintain traction on debris</td>
+<td>Tank-style tracks</td>
+<td>Grips better on rubble, sand, and uneven ground.</td>
+</tr>
+<tr>
+<td>Maneuver in tight spaces</td>
+<td>Omni-directional wheels</td>
+<td>Can move sideways for precise positioning.</td>
+</tr>
+<tr>
+<td>Travel through water when needed</td>
+<td>Flip-out fins</td>
+<td>Deploys fins to swim across water sections.</td>
+</tr>
+<tr>
+<td>Sustain water propulsion</td>
+<td>Propeller drive</td>
+<td>Provides steady forward motion in water.</td>
+</tr>
+<tr>
+<td>Work across land and water</td>
+<td>Paddle wheels</td>
+<td>A dual-purpose option that handles both surfaces.</td>
+</tr>
+<tr>
+<td>Recover after flips</td>
+<td>Self-righting body</td>
+<td>Automatically returns upright if it rolls over.</td>
+</tr>
+<tr>
+<td>Clear obstacles</td>
+<td>Adjustable ride height</td>
+<td>Raises the body to get over bumps and edges.</td>
+</tr>
+<tr>
+<td>Protect against impacts</td>
+<td>Shock-absorbing shell</td>
+<td>Helps protect internal parts during drops and collisions.</td>
+</tr>
+<tr>
+<td>Adapt to different terrain</td>
+<td>Modular wheel attachments</td>
+<td>Swap wheel/track modules based on the environment.</td>
+</tr>
+<tr>
+<td>Handle uneven ground</td>
+<td>Articulated chassis</td>
+<td>Flexes to keep contact and control on rough terrain.</td>
+</tr>
+<tr>
+<td>Stay stable while moving</td>
+<td>Low center of gravity design</td>
+<td>Reduces tipping risk during turns and impacts.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sensors-environmental-awareness">Sensors &amp; Environmental Awareness</h2>
+<table>
+<thead>
+<tr>
+<th>Need / Requirement</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>See what the device sees</td>
+<td>FPV camera</td>
+<td>Streams live video back to the operator.</td>
+</tr>
+<tr>
+<td>Maintain visibility in darkness</td>
+<td>Low-light camera</td>
+<td>Keeps the view usable in dim or dark areas.</td>
+</tr>
+<tr>
+<td>Get a wider view of the scene</td>
+<td>Wide-angle lens</td>
+<td>Covers more area so you miss less at the edges.</td>
+</tr>
+<tr>
+<td>Detect hazardous atmospheres</td>
+<td>Gas sensor</td>
+<td>Flags dangerous gases in the environment.</td>
+</tr>
+<tr>
+<td>Spot heat-related risks</td>
+<td>Temperature sensor</td>
+<td>Identifies hot zones or thermal hazards.</td>
+</tr>
+<tr>
+<td>Understand moisture conditions</td>
+<td>Humidity sensor</td>
+<td>Helps detect damp, wet, or condensation-prone areas.</td>
+</tr>
+<tr>
+<td>Sense depth underwater</td>
+<td>Pressure/depth sensor</td>
+<td>Measures water depth during submerged operation.</td>
+</tr>
+<tr>
+<td>Track motion and orientation</td>
+<td>Inertial Measurement Unit (IMU)</td>
+<td>Reports tilt, movement, and orientation changes.</td>
+</tr>
+<tr>
+<td>Catch leaks early</td>
+<td>Water intrusion sensor</td>
+<td>Alerts if water enters the chassis.</td>
+</tr>
+<tr>
+<td>Detect collisions</td>
+<td>Impact detection</td>
+<td>Registers bumps or crashes for awareness and logging.</td>
+</tr>
+<tr>
+<td>Detect unstable ground</td>
+<td>Vibration sensor</td>
+<td>Helps identify shaky surfaces or rough travel conditions.</td>
+</tr>
+<tr>
+<td>Combine signals into one picture</td>
+<td>Sensor fusion</td>
+<td>Blends sensor data to improve reliability.</td>
+</tr>
+<tr>
+<td>Summarize risk level</td>
+<td>Hazard scoring algorithm</td>
+<td>Rolls multiple readings into a simple danger indicator.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="controls-human-interaction">Controls &amp; Human Interaction</h2>
+<table>
+<thead>
+<tr>
+<th>Need / Requirement</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Make controls feel intuitive</td>
+<td>Direction-mapped buttons</td>
+<td>Buttons match natural movement directions.</td>
+</tr>
+<tr>
+<td>Use familiar inputs</td>
+<td>Joystick input</td>
+<td>Game-style control that most users already understand.</td>
+</tr>
+<tr>
+<td>Reduce training time</td>
+<td>Game controller support</td>
+<td>Works with common controllers to lower the learning curve.</td>
+</tr>
+<tr>
+<td>Operate remotely</td>
+<td>Smartphone app</td>
+<td>Wireless control from a phone or tablet.</td>
+</tr>
+<tr>
+<td>Control from any device</td>
+<td>Web-based dashboard</td>
+<td>Runs in a browser across platforms.</td>
+</tr>
+<tr>
+<td>Provide tactile control</td>
+<td>Dedicated handheld controller</td>
+<td>Physical buttons and feedback for confident operation.</td>
+</tr>
+<tr>
+<td>Choose precision or speed</td>
+<td>Speed modes</td>
+<td>Switch between careful movement and faster travel.</td>
+</tr>
+<tr>
+<td>Move safely in tight spaces</td>
+<td>Crawl mode</td>
+<td>Slow, controlled driving for confined areas.</td>
+</tr>
+<tr>
+<td>Stop instantly in emergencies</td>
+<td>Emergency stop</td>
+<td>Immediate shutdown when something goes wrong.</td>
+</tr>
+<tr>
+<td>Always allow human control</td>
+<td>Manual override</td>
+<td>Operator can take back control at any time.</td>
+</tr>
+<tr>
+<td>Prevent accidental commands</td>
+<td>Control lockout</td>
+<td>Locks inputs to avoid unintended movement.</td>
+</tr>
+<tr>
+<td>Assist navigation</td>
+<td>Waypoint navigation</td>
+<td>Moves to set points with reduced operator workload.</td>
+</tr>
+<tr>
+<td>Keep safe distance from walls</td>
+<td>Follow-wall mode</td>
+<td>Maintains spacing from surfaces automatically.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="user-cues-feedback-ease-of-use">User Cues &amp; Feedback (Ease of Use)</h2>
+<table>
+<thead>
+<tr>
+<th>Need / Requirement</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Make system status obvious</td>
+<td>LED indicators</td>
+<td>Shows power and current state at a glance.</td>
+</tr>
+<tr>
+<td>Show modes clearly</td>
+<td>Color-coded LEDs</td>
+<td>Different colors communicate different modes.</td>
+</tr>
+<tr>
+<td>Signal how serious an error is</td>
+<td>LED brightness levels</td>
+<td>Brighter patterns indicate higher severity.</td>
+</tr>
+<tr>
+<td>Confirm commands were received</td>
+<td>Audio tones</td>
+<td>Simple tones acknowledge user inputs.</td>
+</tr>
+<tr>
+<td>Indicate readiness</td>
+<td>Startup sound sequence</td>
+<td>Lets users know when the system is ready.</td>
+</tr>
+<tr>
+<td>Confirm actions without looking</td>
+<td>Vibration feedback</td>
+<td>Tactile confirmation for key actions.</td>
+</tr>
+<tr>
+<td>Show when the camera is active</td>
+<td>Camera ring LED</td>
+<td>Visible indicator that the camera is on.</td>
+</tr>
+<tr>
+<td>Show motion status</td>
+<td>Motor activity indicator</td>
+<td>Signals when the drive system is active.</td>
+</tr>
+<tr>
+<td>Communicate fault types</td>
+<td>Blinking error pattern</td>
+<td>Distinct blink patterns identify fault states.</td>
+</tr>
+<tr>
+<td>Warn on critical faults</td>
+<td>Audible error alarm</td>
+<td>Louder alert for urgent issues.</td>
+</tr>
+<tr>
+<td>Avoid unexpected shutdown</td>
+<td>Battery level indicator</td>
+<td>Clear battery status to plan before power runs out.</td>
+</tr>
+<tr>
+<td>Show connection quality</td>
+<td>Signal strength indicator</td>
+<td>Helps diagnose weak links or dropouts.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="durability-safety">Durability &amp; Safety</h2>
+<table>
+<thead>
+<tr>
+<th>Need / Requirement</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Protect electronics from the environment</td>
+<td>Enclosed electronics</td>
+<td>Keeps debris and dirt away from sensitive components.</td>
+</tr>
+<tr>
+<td>Survive rough handling</td>
+<td>Impact-resistant shell</td>
+<td>Designed to withstand drops and bumps.</td>
+</tr>
+<tr>
+<td>Repair quickly</td>
+<td>Replaceable outer shell</td>
+<td>Swap the shell instead of repairing the whole unit.</td>
+</tr>
+<tr>
+<td>Shield internal boards</td>
+<td>Internal shock mounts</td>
+<td>Reduces shock loads on PCBs and connectors.</td>
+</tr>
+<tr>
+<td>Reduce electrical hazard</td>
+<td>Low-voltage system</td>
+<td>Lower voltage reduces shock risk.</td>
+</tr>
+<tr>
+<td>Prevent motor/electrical damage</td>
+<td>Overcurrent protection</td>
+<td>Limits current spikes that can harm motors or electronics.</td>
+</tr>
+<tr>
+<td>Fail safely</td>
+<td>Fuse protection</td>
+<td>Cuts power to prevent catastrophic failures.</td>
+</tr>
+<tr>
+<td>Avoid sharp edges</td>
+<td>Rounded edges</td>
+<td>Reduces snagging and risk of cuts or pinches.</td>
+</tr>
+<tr>
+<td>Detect tip risk</td>
+<td>Tip-over detection</td>
+<td>Flags instability during movement.</td>
+</tr>
+<tr>
+<td>Shut down safely on fault</td>
+<td>Controlled shutdown</td>
+<td>Powers down in a predictable, safe way.</td>
+</tr>
+<tr>
+<td>Prevent overheating</td>
+<td>Thermal shutdown</td>
+<td>Automatically reduces risk if temperatures get too high.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="instruction-learning">Instruction &amp; Learning</h2>
+<table>
+<thead>
+<tr>
+<th>Need / Requirement</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Get started quickly</td>
+<td>One-page quick-start</td>
+<td>A short guide that gets users operating fast.</td>
+</tr>
+<tr>
+<td>Keep instructions simple</td>
+<td>Icon-based cues</td>
+<td>Uses visuals so users don’t need to read long text.</td>
+</tr>
+<tr>
+<td>Guide users step-by-step</td>
+<td>On-screen prompts</td>
+<td>Walks operators through key actions.</td>
+</tr>
+<tr>
+<td>Offer help when it’s needed</td>
+<td>Context-sensitive help</td>
+<td>Shows tips based on what the user is doing.</td>
+</tr>
+<tr>
+<td>Support beginner-to-expert learning</td>
+<td>Layered help menus</td>
+<td>Basic help upfront; advanced details optional.</td>
+</tr>
+<tr>
+<td>Demonstrate without input</td>
+<td>Auto-demo mode</td>
+<td>Runs an automated demo hands-free.</td>
+</tr>
+<tr>
+<td>Show continuously in a booth</td>
+<td>Looping demo script</td>
+<td>Repeats a demo sequence for displays.</td>
+</tr>
+<tr>
+<td>Help new users succeed</td>
+<td>Beginner mode</td>
+<td>Slower movement and guided controls.</td>
+</tr>
+<tr>
+<td>Enable full control for experts</td>
+<td>Expert mode</td>
+<td>No restrictions—complete manual control.</td>
+</tr>
+<tr>
+<td>Refresh fundamentals quickly</td>
+<td>Reset tutorial</td>
+<td>A quick walkthrough to relearn the basics.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="system-architecture-expansion">System Architecture &amp; Expansion</h2>
+<table>
+<thead>
+<tr>
+<th>Need / Requirement</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Support modular electronics</td>
+<td>UART daisy-chain</td>
+<td>Links multiple boards in a simple chain.</td>
+</tr>
+<tr>
+<td>Add capabilities easily</td>
+<td>Plug and play modules</td>
+<td>Drop-in modules without complex wiring.</td>
+</tr>
+<tr>
+<td>Keep the internal layout compact</td>
+<td>Stackable PCBs</td>
+<td>Layers boards to save space.</td>
+</tr>
+<tr>
+<td>Ensure reliable communication</td>
+<td>CRC error checking</td>
+<td>Detects corrupted messages between boards.</td>
+</tr>
+<tr>
+<td>Detect module failures</td>
+<td>Heartbeat monitoring</td>
+<td>Flags nodes that stop responding.</td>
+</tr>
+<tr>
+<td>Recover automatically from faults</td>
+<td>Watchdog timers</td>
+<td>Auto-resets components that hang or crash.</td>
+</tr>
+<tr>
+<td>Make servicing straightforward</td>
+<td>Accessible service panels</td>
+<td>Access key parts without full disassembly.</td>
+</tr>
+<tr>
+<td>Speed up troubleshooting</td>
+<td>Diagnostic LEDs</td>
+<td>Quick visual clues during debugging.</td>
+</tr>
+<tr>
+<td>Prepare for future upgrades</td>
+<td>Ports available for new sensors</td>
+<td>Ports for new sensors or modules.</td>
+</tr>
+<tr>
+<td>Scale to multiple controllers</td>
+<td>Expansion ports</td>
+<td>Supports multiple boards/controllers working together.</td>
+</tr>
+<tr>
+<td>Scalability</td>
+<td>Multi-node support</td>
+<td>Multiple controllers / Multi-node architecture</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="exploratory-ideas">Exploratory Ideas</h2>
+<table>
+<thead>
+<tr>
+<th>Need / Requirement</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable sacrificial scouting</td>
+<td>Disposable scout mode</td>
+<td>A mode for high-risk missions where loss is acceptable.</td>
+</tr>
+<tr>
+<td>Show destroyed or disabled state</td>
+<td>Intentional failure feedback</td>
+<td>Clearly indicates when the unit is no longer functional.</td>
+</tr>
+<tr>
+<td>Extend reach with deployables</td>
+<td>Mothership deployment</td>
+<td>A larger unit launches smaller scouts.</td>
+</tr>
+<tr>
+<td>Coordinate multiple units</td>
+<td>Swarm operation</td>
+<td>Multiple devices working together.</td>
+</tr>
+<tr>
+<td>Improve navigation intelligence</td>
+<td>AI-assisted navigation</td>
+<td>Suggests or selects routes based on terrain.</td>
+</tr>
+<tr>
+<td>Build a hazard map</td>
+<td>Environmental mapping</td>
+<td>Turns sensor data into a visual map of conditions.</td>
+</tr>
+<tr>
+<td>Review missions afterwards</td>
+<td>Mission replay</td>
+<td>Playback for analysis and training.</td>
+</tr>
+<tr>
+<td>Make demos interactive</td>
+<td>Audience voting control</td>
+<td>Let the audience influence control during showcases.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="demonstration-showcase-impact">Demonstration &amp; Showcase Impact</h2>
+<table>
+<thead>
+<tr>
+<th>Need / Requirement</th>
+<th>Feature</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Make system data easy to follow</td>
+<td>Live telemetry display</td>
+<td>Shows key metrics in real time for the audience.</td>
+</tr>
+<tr>
+<td>Ensure everyone can see</td>
+<td>Projection to large screen</td>
+<td>Optimized for large-format display.</td>
+</tr>
+<tr>
+<td>Show amphibious capability</td>
+<td>Water tank demo</td>
+<td>Simple setup to demonstrate water operation.</td>
+</tr>
+<tr>
+<td>Show ruggedness</td>
+<td>Obstacle course demo</td>
+<td>Highlights durability and terrain handling.</td>
+</tr>
+<tr>
+<td>Make hazards understandable</td>
+<td>Visual hazard demo</td>
+<td>Uses clear visuals so risk is easy to interpret.</td>
+</tr>
+<tr>
+<td>Explain what’s happening</td>
+<td>Status overlay on video</td>
+<td>Adds labels and status directly onto the feed.</td>
+</tr>
+<tr>
+<td>Support repeated demos</td>
+<td>Fast reset sequence</td>
+<td>Resets quickly between runs.</td>
+</tr>
+<tr>
+<td>Reduce downtime</td>
+<td>Replaceable battery pack</td>
+<td>Swap batteries instead of waiting to recharge.</td>
+</tr>
+<tr>
+<td>Support multiple viewers</td>
+<td>Spectator display mode</td>
+<td>Lets multiple people watch the feed at once.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="concept-1-smart-autonomous-recon-scout">Concept 1 — Smart &amp; Autonomous Recon Scout</h1>
+<table>
+<thead>
+<tr>
+<th>Feature Group</th>
+<th>Feature</th>
+<th>Priority</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Smart Navigation</td>
+<td>Waypoint navigation</td>
+<td>High</td>
+<td>Allows semi-autonomous movement</td>
+</tr>
+<tr>
+<td>Smart Navigation</td>
+<td>Follow-wall mode</td>
+<td>Medium</td>
+<td>Maintains distance from surfaces</td>
+</tr>
+<tr>
+<td>Smart Navigation</td>
+<td>AI-assisted navigation</td>
+<td>Low</td>
+<td>Adapts movement based on terrain</td>
+</tr>
+<tr>
+<td>Sensor Intelligence</td>
+<td>Sensor fusion</td>
+<td>High</td>
+<td>Combines data from multiple sensors</td>
+</tr>
+<tr>
+<td>Sensor Intelligence</td>
+<td>Hazard scoring algorithm</td>
+<td>High</td>
+<td>Summarizes environmental danger level</td>
+</tr>
+<tr>
+<td>Sensors</td>
+<td>FPV camera</td>
+<td>High</td>
+<td>Live video feed for monitoring</td>
+</tr>
+<tr>
+<td>Sensors</td>
+<td>Inertial Measurement Unit (IMU)</td>
+<td>High</td>
+<td>Tracks orientation and motion</td>
+</tr>
+<tr>
+<td>Sensors</td>
+<td>Low-light camera</td>
+<td>Medium</td>
+<td>Improves visibility in dark areas</td>
+</tr>
+<tr>
+<td>User Interface</td>
+<td>Live telemetry display</td>
+<td>High</td>
+<td>Shows real-time system data</td>
+</tr>
+<tr>
+<td>User Interface</td>
+<td>Status overlay on video</td>
+<td>Medium</td>
+<td>Explains robot behavior visually</td>
+</tr>
+<tr>
+<td>Software Features</td>
+<td>Mission replay</td>
+<td>Medium</td>
+<td>Allows playback of recorded runs</td>
+</tr>
+<tr>
+<td>Software Features</td>
+<td>Context-sensitive help</td>
+<td>Low</td>
+<td>Provides guidance when needed</td>
+</tr>
+<tr>
+<td>Control Safety</td>
+<td>Manual override</td>
+<td>High</td>
+<td>Ensures user control during autonomy</td>
+</tr>
+<tr>
+<td>Wireless</td>
+<td>Web-based dashboard</td>
+<td>Medium</td>
+<td>Allows control and monitoring remotely</td>
+</tr>
+</tbody>
+</table>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../EGR314_Concept1.png" data-desc-position="bottom"><img alt="Concept 1" src="../EGR314_Concept1.png"></a></p>
+<p>This concept is designed to feel like a “smart assistant” rather than a fully manual robot. Instead of controlling every movement, the user gives the robot simple directions, such as where to go or what area to explore, and the robot handles the details on its own. While it moves, the user can watch live video and system information on a screen, helping them understand what the robot is seeing and why it is making certain decisions. If anything unexpected happens, the user can immediately take control, making the system feel both intelligent and trustworthy.</p>
+<h3 id="team-responsibility-split-concept-1-3-teammates">Team Responsibility Split — Concept 1 (3 Teammates)</h3>
+<ol>
+<li>
+<p><strong>Internet-based Two-way Wireless Communication (Teammate A)</strong><br>
+   Teammate A will implement the two-way wireless communication using Wi-Fi, including sending waypoint and control commands to the robot and streaming telemetry and video data back to the user interface. They will also handle reliability concerns such as reconnect behavior and safe operation if the connection drops.</p>
+</li>
+<li>
+<p><strong>Human–Machine Interface via Screen and Buttons (Teammate B)</strong><br>
+   Teammate B will design the screen-based interface showing live video, telemetry, hazard score, and navigation status. They will implement manual override controls, on-screen prompts, and clear alerts so the user always understands what the robot is doing.</p>
+</li>
+<li>
+<p><strong>Sensor + Autonomy Controlled Response (Teammate C)</strong><br>
+   Teammate C will integrate sensor data, implement sensor fusion and hazard scoring, and develop waypoint navigation logic. They will also handle controlled responses between sensors and actuators to ensure smooth and safe autonomous movement.</p>
+</li>
+</ol>
+<hr>
+<h1 id="concept-2-cost-effective-modular-hazard">Concept 2 — Cost-Effective &amp; Modular Hazard</h1>
+<table>
+<thead>
+<tr>
+<th>Feature Group</th>
+<th>Feature</th>
+<th>Priority</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployment</td>
+<td>Throwable chassis</td>
+<td>High</td>
+<td>Enables quick deployment into hazardous areas</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td>Compact body</td>
+<td>High</td>
+<td>Fits through narrow spaces</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td>One-button power on</td>
+<td>High</td>
+<td>Minimizes setup time</td>
+</tr>
+<tr>
+<td>Mobility</td>
+<td>Wheeled propulsion</td>
+<td>High</td>
+<td>Simple and low-cost movement</td>
+</tr>
+<tr>
+<td>Durability</td>
+<td>Replaceable outer shell</td>
+<td>High</td>
+<td>Damaged shells can be easily replaced</td>
+</tr>
+<tr>
+<td>Durability</td>
+<td>Shock-absorbing shell</td>
+<td>Medium</td>
+<td>Reduces damage from impacts</td>
+</tr>
+<tr>
+<td>Modularity</td>
+<td>Modular parts</td>
+<td>High</td>
+<td>Allows replacement of only damaged components</td>
+</tr>
+<tr>
+<td>Modularity</td>
+<td>Plug-and-play modules</td>
+<td>Medium</td>
+<td>Simplifies repair and upgrades</td>
+</tr>
+<tr>
+<td>Cost Reduction</td>
+<td>Standardized fasteners</td>
+<td>Medium</td>
+<td>Uses common, inexpensive hardware</td>
+</tr>
+<tr>
+<td>Cost Reduction</td>
+<td>Shared components</td>
+<td>Medium</td>
+<td>Same parts reused across subsystems</td>
+</tr>
+<tr>
+<td>Power Efficiency</td>
+<td>Energy-efficient motor</td>
+<td>Medium</td>
+<td>Reduces power consumption</td>
+</tr>
+<tr>
+<td>Power Efficiency</td>
+<td>Replaceable battery pack</td>
+<td>Medium</td>
+<td>Extends operating life between runs</td>
+</tr>
+<tr>
+<td>User Cues</td>
+<td>LED indicators</td>
+<td>Medium</td>
+<td>Basic feedback for system status</td>
+</tr>
+<tr>
+<td>Exploratory</td>
+<td>Intentional failure feedback</td>
+<td>Low</td>
+<td>Indicates when the device is no longer operational</td>
+</tr>
+</tbody>
+</table>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../EGR314_Concept2.png" data-desc-position="bottom"><img alt="Concept 2" src="../EGR314_Concept2.png"></a></p>
+<p>This concept is built for situations where the environment is dangerous and the robot might get damaged. The idea is to keep the robot simple, affordable, and easy to deploy, so a user can quickly send it into a risky area without worrying too much about losing it. It turns on with a single button, drives using basic wheels, and focuses on getting useful information fast. If something breaks, only the damaged parts need to be replaced instead of the whole robot, making it practical for repeated use in high-risk scenarios.</p>
+<h3 id="team-responsibility-split-concept-2-3-teammates">Team Responsibility Split — Concept 2 (3 Teammates)</h3>
+<ol>
+<li>
+<p><strong>Internet-based Two-way Wireless Communication (Teammate A)</strong><br>
+   Teammate A will handle basic two-way wireless communication for sending control commands and receiving video and system status information. The focus will be on maintaining a stable and reliable connection rather than advanced automation features.</p>
+</li>
+<li>
+<p><strong>Human–Machine Interface via Screen and Buttons (Teammate B)</strong><br>
+   Teammate B will design a minimal screen-based interface that displays essential information such as the video feed, battery level, and overall system state. Controls will be kept simple and easy to understand to reduce user confusion.</p>
+</li>
+<li>
+<p><strong>Sensor + Actuator Controlled Response (Teammate C)</strong><br>
+   Teammate C will implement motor control, basic sensor integration, and safety behaviors such as controlled shutdown and fault detection. Their focus will be on reliable operation and low-cost implementation rather than advanced autonomy.</p>
+</li>
+</ol>
+<hr>
+<h1 id="concept-3-fast-deployment-strong-situational-awareness">Concept 3 — Fast Deployment, Strong Situational Awareness</h1>
+<table>
+<thead>
+<tr>
+<th>Feature Group</th>
+<th>Feature</th>
+<th>Priority</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployment &amp; Startup</td>
+<td>Throwable chassis</td>
+<td>High</td>
+<td>Can be tossed into hazardous areas to start a mission quickly.</td>
+</tr>
+<tr>
+<td>Deployment &amp; Startup</td>
+<td>Compact body</td>
+<td>High</td>
+<td>Fits through narrow openings and tight spaces.</td>
+</tr>
+<tr>
+<td>Deployment &amp; Startup</td>
+<td>One-button power on</td>
+<td>High</td>
+<td>Starts up with a single press—no complicated steps.</td>
+</tr>
+<tr>
+<td>Deployment &amp; Startup</td>
+<td>Auto-leveling system</td>
+<td>Medium</td>
+<td>Stabilizes itself after landing so it’s ready to drive.</td>
+</tr>
+<tr>
+<td>Deployment &amp; Startup</td>
+<td>Reset-to-home mode</td>
+<td>Medium</td>
+<td>Returns to a default ready state for the next operator.</td>
+</tr>
+<tr>
+<td>Mobility &amp; Terrain</td>
+<td>Omni-directional wheels</td>
+<td>High</td>
+<td>Moves sideways for precise positioning in tight spaces.</td>
+</tr>
+<tr>
+<td>Mobility &amp; Terrain</td>
+<td>Low center of gravity design</td>
+<td>High</td>
+<td>Reduces tipping risk during turns, bumps, and impacts.</td>
+</tr>
+<tr>
+<td>Mobility &amp; Terrain</td>
+<td>Two-wheel efficient drive</td>
+<td>High</td>
+<td>Uses fewer motors to reduce power draw and simplify the drivetrain.</td>
+</tr>
+<tr>
+<td>Mobility &amp; Terrain</td>
+<td>Flexible / compliant chassis</td>
+<td>Medium</td>
+<td>Helps maintain contact and control on uneven ground.</td>
+</tr>
+<tr>
+<td>Water Capability</td>
+<td>Flip-out fins</td>
+<td>Medium</td>
+<td>Deploys fins to swim across short water sections when needed.</td>
+</tr>
+<tr>
+<td>Remote Control &amp; UX</td>
+<td>Smartphone app</td>
+<td>High</td>
+<td>Wireless control from a personal device (phone/tablet).</td>
+</tr>
+<tr>
+<td>Remote Control &amp; UX</td>
+<td>On-screen prompts</td>
+<td>High</td>
+<td>Step-by-step guidance so new users can operate confidently.</td>
+</tr>
+<tr>
+<td>Remote Control &amp; UX</td>
+<td>Waypoint navigation</td>
+<td>High</td>
+<td>Moves to set points to reduce operator workload.</td>
+</tr>
+<tr>
+<td>Remote Control &amp; UX</td>
+<td>Manual override</td>
+<td>High</td>
+<td>Operator can instantly take control if autonomy struggles.</td>
+</tr>
+<tr>
+<td>Remote Control &amp; UX</td>
+<td>Emergency stop</td>
+<td>High</td>
+<td>Immediate shutdown if something goes wrong.</td>
+</tr>
+<tr>
+<td>Operator Awareness</td>
+<td>FPV camera</td>
+<td>High</td>
+<td>Streams live video to the operator’s personal device.</td>
+</tr>
+<tr>
+<td>Operator Awareness</td>
+<td>Live telemetry display</td>
+<td>High</td>
+<td>Shows key system data (battery, link, alerts) in real time.</td>
+</tr>
+<tr>
+<td>Operator Awareness</td>
+<td>Hazard scoring algorithm</td>
+<td>High</td>
+<td>Rolls sensor readings into a simple danger indicator.</td>
+</tr>
+<tr>
+<td>User Cues &amp; Feedback</td>
+<td>Color-coded LEDs</td>
+<td>Medium</td>
+<td>Clear mode/status visibility at a glance.</td>
+</tr>
+<tr>
+<td>User Cues &amp; Feedback</td>
+<td>Camera ring LED</td>
+<td>Medium</td>
+<td>Obvious indicator when the camera is active.</td>
+</tr>
+<tr>
+<td>User Cues &amp; Feedback</td>
+<td>LED indicators (basic status)</td>
+<td>Medium</td>
+<td>Quick power/state feedback without opening the app.</td>
+</tr>
+<tr>
+<td>Power &amp; Uptime</td>
+<td>Replaceable battery pack</td>
+<td>High</td>
+<td>Swap batteries to keep missions and demos running.</td>
+</tr>
+<tr>
+<td>Power &amp; Uptime</td>
+<td>Battery level indicator</td>
+<td>Medium</td>
+<td>Prevents unexpected shutdown by showing remaining power.</td>
+</tr>
+<tr>
+<td>Safety &amp; Durability</td>
+<td>Thermal shutdown</td>
+<td>High</td>
+<td>Protects the system if internal temperatures get too high.</td>
+</tr>
+<tr>
+<td>Safety &amp; Durability</td>
+<td>Replaceable outer shell</td>
+<td>High</td>
+<td>Damaged shell can be swapped instead of repairing the whole unit.</td>
+</tr>
+<tr>
+<td>Safety &amp; Durability</td>
+<td>Impact-resistant / shock-absorbing shell</td>
+<td>Medium</td>
+<td>Helps protect internal parts during drops and collisions.</td>
+</tr>
+<tr>
+<td>Safety &amp; Durability</td>
+<td>Enclosed electronics</td>
+<td>Medium</td>
+<td>Keeps debris and dirt away from sensitive components.</td>
+</tr>
+</tbody>
+</table>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/304f1b.png" data-desc-position="bottom"><img alt="Concept 3" src="images/304f1b.png"></a></p>
+<p>This concept is designed for fast deployment, simple operation, and strong situational awareness in hazardous environments. The throwable chassis and one-button power let an operator begin a mission immediately with minimal setup. Auto-leveling stabilizes the device after landing so it becomes drive-ready quickly, and reset-to-home returns it to a default ready state for the next operator. Omni-directional wheels allow precise positioning in tight spaces, while a low center of gravity reduces tipping risk during turns and bumps. A two-wheel efficient drive reduces power use, improving runtime and reliability.</p>
+<p>FPV video to a personal device and a live telemetry display keep the operator informed at a safe distance. The hazard scoring algorithm simplifies environmental risk into one easy-to-read indicator. On-screen prompts reduce confusion and training time. Thermal shutdown protects the system from overheating, and replaceable battery packs plus a replaceable outer shell reduce downtime and make field recovery practical.</p>
+<h3 id="team-responsibility-split-concept-3-3-teammates">Team Responsibility Split - Concept 3 (3 Teammates)</h3>
+<ol>
+<li>
+<p><strong>Internet-based Two-way Wireless Communication (Teammate A)</strong><br>
+   Teammate A will implement the two-way wireless link (Wi-Fi), including sending control commands from the phone to the robot and streaming FPV video + telemetry back to the user. They will handle reliability issues such as reconnect behavior, message formatting/protocol, and safe behavior if the signal drops.</p>
+</li>
+<li>
+<p><strong>Human–Machine Interface via Screen and Buttons (Teammate B)</strong><br>
+   Teammate B will build the smartphone interface (screen-based HMI) showing live video, hazard score, battery level, connection strength, and temperature status. They will design the control layout (joystick/d-pad + key buttons), implement on-screen prompts, and create clear alerts (low battery, weak signal, high temperature). They will ensure the emergency stop is always visible and easy to access.</p>
+</li>
+<li>
+<p><strong>Sensor + Actuator Controlled Response (Teammate C)</strong><br>
+   Teammate C will implement motor control and motion behavior (two-wheel efficient driving and omni-directional movement as supported by the mechanical design). They will integrate sensor inputs used for hazard scoring, implement waypoint navigation logic, and build safety behaviors such as thermal shutdown, emergency stop response, and safe fallback if communication is lost.</p>
+</li>
+</ol>
+<hr>
+<h1 id="design-questions-answers">Design Questions &amp; Answers</h1>
+<h2 id="why-concept-3">Why concept 3?</h2>
+<p>We chose Concept 3 because it combines the most valuable strengths of Concept 1 and Concept 2 into one realistic build. Compared to Concept 1, Concept 3 keeps the key “smart” benefits (waypoint navigation, hazard scoring, telemetry + FPV) but avoids heavy autonomy complexity that increases implementation risk and debugging time. Compared to Concept 2, Concept 3 keeps the core practical build advantages (throwable deployment, replaceable shell, replaceable battery, reliability-focused design) while adding essential awareness tools (FPV + telemetry + hazard score + prompts) that make the device safer and easier to use. Overall, Concept 3 provides the best balance of feasibility, safety, usability, and mission effectiveness—making it the strongest option to build.</p>
+<h2 id="what-cues-will-make-the-device-easier-to-use">What cues will make the device easier to use?</h2>
+<p>We will provide simple, redundant cues so users never have to guess device status. Color-coded LEDs show mode/state, a camera ring LED shows when the camera is active, and a clear telemetry panel in the phone app displays battery level, signal strength, temperature, and hazard score. On-screen prompts guide users through setup and operation, and warnings appear immediately when something needs attention (low battery, overheating risk, weak connection).</p>
+<h2 id="how-will-the-controls-be-designed">How will the controls be designed?</h2>
+<p>Controls will be designed for low cognitive load and quick learning. The phone app will combine FPV video, a simple movement control (joystick/d-pad), and large buttons for key actions like waypoint navigation and reset-to-home. A large emergency stop will always be visible. Manual override will always be available so the user can instantly take control whenever autonomy is active.</p>
+<h2 id="what-role-will-durability-and-comfort-play">What role will durability and comfort play?</h2>
+<p>Durability is essential because operators need to trust the device enough to deploy it into dangerous areas. The throwable chassis supports rough handling, while thermal shutdown protects internal components. Replaceable battery packs reduce downtime and keep missions running. A replaceable outer shell makes damage recovery simple and lowers repair time and cost. Comfort comes from predictable handling: the low center of gravity improves stability and reduces operator stress, while clear cues reduce mental load.</p>
+<h2 id="what-instruction-is-needed-to-use-the-device">What instruction is needed to use the device?</h2>
+<p>Instruction will be minimal and built into the experience. Users will have a one-page quick-start guide (deploy → connect → drive → interpret hazard score → recover/reset). The app will provide on-screen prompts for first-time setup, plus a short guided tutorial explaining basic driving, emergency stop, waypoint use, and how to read telemetry/hazard cues. Advanced features will be optional; basic driving + video should work immediately.</p>
 
 
 
