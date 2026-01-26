@@ -322,7 +322,8 @@ This concept is built for situations where the environment is dangerous and the 
 | Safety & Durability   | Impact-resistant / shock-absorbing shell | Medium | Helps protect internal parts during drops and collisions.               |
 | Safety & Durability   | Enclosed electronics            | Medium   | Keeps debris and dirt away from sensitive components.                   |
 
-![Concept 3](images/304f1b.png)
+![Concept 3](<img width="1728" height="2304" alt="R6_drone_poster" src="https://github.com/user-attachments/assets/4b6eda66-d4cf-4e30-b9ef-c3c9dbd4f5a8" />
+)
 
 This concept is designed for fast deployment, simple operation, and strong situational awareness in hazardous environments. The throwable chassis lets an operator begin a mission immediately with minimal setup. Auto-leveling stabilizes the device  at landing and allows for an immediate drive-rady response, and reset-to-home returns it to a default ready state for the next operator. Omni-directional wheels allow precise positioning in tight spaces, while a low center of gravity reduces tipping risk during turns and bumps. A two-wheel efficient drive reduces power use, improving runtime and reliability.
 
