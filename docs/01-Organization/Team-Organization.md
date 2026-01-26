@@ -19,4 +19,4 @@ From [ProductPlan](https://www.productplan.com/glossary/product-mission/): Focus
 
 ## Other Organizational Information
 
-Other details about the organization structure of the team can be reviewed in ["Appendix: Team Organization Information."](https://embedded-systems-design.github.io/template_report/Appendix/01-Organization-Information/Append-Organization/)
+Other details about the organization structure of the team can be reviewed in ["Appendix: Team Organization Information."](https://egr314-s-2026-302.github.io/EGR314-Team302.github.io/Appendix/01-Organization-Information/Append-Organization/)
