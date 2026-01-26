@@ -215,7 +215,7 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 ---
 
-## Sorted, Ranked, and Grouped Features for Automatic Curtain Controller
+## Sorted, Ranked, and Grouped Features
 
 **Concept 1 — Smart & Autonomous Recon Scout**
 
