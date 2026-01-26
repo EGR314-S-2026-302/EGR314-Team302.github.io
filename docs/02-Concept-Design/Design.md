@@ -2,7 +2,7 @@
 title: Concept Generation and Design Ideation
 ---
 
-# Goal of the Exploration Device
+## Goal of the Exploration Device
 
 The goal of our exploration device is to safely collect meaningful environmental information from hazardous or inaccessible environments while minimizing operator risk. The Amphibot V1 is designed to scout unknown terrain, provide real-time visual and sensor feedback, and communicate system state clearly to the operator. The device emphasizes modularity, rapid deployment, and observable cause-and-effect interactions between user input and system response.
 
@@ -10,7 +10,7 @@ On top of actually working as an explorer, it's also meant to teach and demonstr
 
 ---
 
-# Intended Audience
+## Intended Audience
 
 Real-time users break into two key groups.
 
@@ -36,9 +36,7 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 # Generating Ideas
 
----
-
-## Ease of Deployment & Initial Use
+### Ease of Deployment & Initial Use
 
 | Need / Requirement                         | Feature                         | Details                                                                 |
 | ------------------------------------------ | ------------------------------- | ----------------------------------------------------------------------- |
@@ -54,7 +52,7 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 ---
 
-## Mobility & Terrain Adaptability
+### Mobility & Terrain Adaptability
 
 | Need / Requirement                           | Feature                         | Details                                                                 |
 | ------------------------------------------ | ------------------------------- | ----------------------------------------------------------------------- |
@@ -74,7 +72,7 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 ---
 
-## Sensors & Environmental Awareness
+### Sensors & Environmental Awareness
 
 | Need / Requirement                                 | Feature                | Details                                                                 |
 | ------------------------------------------ | ------------------------------- | ----------------------------------------------------------------------- |
@@ -94,7 +92,7 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 ---
 
-## Controls & Human Interaction
+### Controls & Human Interaction
 
 | Need / Requirement                                | Feature               | Details                                                                 |
 | ------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------- |
@@ -114,7 +112,7 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 ---
 
-## User Cues & Feedback (Ease of Use)
+### User Cues & Feedback (Ease of Use)
 
 | Need / Requirement                            | Feature                         | Details                                                                 |
 | ------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------- |
@@ -133,7 +131,7 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 ---
 
-## Durability & Safety
+### Durability & Safety
 
 | Need / Requirement                    | Feature                         | Details                                                                 |
 | -------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------- |
@@ -151,7 +149,7 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 ---
 
-## Instruction & Learning
+### Instruction & Learning
 
 | Need / Requirement                                | Feature                         | Details                                                                 |
 | -------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------- |
@@ -168,7 +166,7 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 ---
 
-## System Architecture & Expansion
+### System Architecture & Expansion
 
 | Need / Requirement                             | Feature                         | Details                                                                 |
 | --------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------- |
@@ -186,7 +184,7 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 ---
 
-## Exploratory Ideas
+### Exploratory Ideas
 
 | Need / Requirement                                   | Feature                         | Details                                                                 |
 | ------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------- |
@@ -201,7 +199,7 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 ---
 
-## Demonstration & Showcase Impact
+### Demonstration & Showcase Impact
 
 | Need / Requirement                                     | Feature                         | Details                                                                 |
 | -------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------- |
@@ -217,7 +215,9 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 ---
 
-# Concept 1 — Smart & Autonomous Recon Scout
+## Sorted, Ranked, and Grouped Features for Automatic Curtain Controller
+
+**Concept 1 — Smart & Autonomous Recon Scout**
 
 
 | Feature Group        | Feature                       | Priority | Details                                      |
@@ -254,7 +254,7 @@ This concept is designed to feel like a “smart assistant” rather than a full
 
 ---
 
-# Concept 2 — Cost-Effective & Modular Hazard
+**Concept 2 — Cost-Effective & Modular Hazard**
 
 | Feature Group  | Feature                   | Priority | Details                                                        |
 | -------------- | ------------------------- | -------- | -------------------------------------------------------------- |
@@ -290,7 +290,7 @@ This concept is built for situations where the environment is dangerous and the 
 
 ---
 
-# Concept 3 — Fast Deployment, Strong Situational Awareness
+**Concept 3 — Fast Deployment, Strong Situational Awareness**
 
 
 | Feature Group         | Feature                         | Priority | Details                                                                 |
