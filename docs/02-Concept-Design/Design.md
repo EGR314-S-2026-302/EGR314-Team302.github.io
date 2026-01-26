@@ -300,11 +300,10 @@ This concept is built for situations where the environment is dangerous and the 
 | Deployment & Startup  | One-button power on             | High     | Starts up with a single press—no complicated steps.                     |
 | Deployment & Startup  | Auto-leveling system            | Medium   | Stabilizes itself after landing so it’s ready to drive.                 |
 | Deployment & Startup  | Reset-to-home mode              | Medium   | Returns to a default ready state for the next operator.                 |
-| Mobility & Terrain    | Omni-directional wheels         | High     | Moves sideways for precise positioning in tight spaces.                 |
 | Mobility & Terrain    | Low center of gravity design    | High     | Reduces tipping risk during turns, bumps, and impacts.                  |
 | Mobility & Terrain    | Two-wheel efficient drive       | High     | Uses fewer motors to reduce power draw and simplify the drivetrain.     |
 | Mobility & Terrain    | Flexible / compliant chassis    | Medium   | Helps maintain contact and control on uneven ground.                    |
-| Water Capability      | Flip-out fins                   | Medium   | Deploys fins to swim across short water sections when needed.           |
+| Water Capability      | Propellers                      | Medium   | Deploys fins to swim across short water sections when needed.           |
 | Remote Control & UX   | Smartphone app                  | High     | Wireless control from a personal device (phone/tablet).                 |
 | Remote Control & UX   | On-screen prompts               | High     | Step-by-step guidance so new users can operate confidently.             |
 | Remote Control & UX   | Waypoint navigation             | High     | Moves to set points to reduce operator workload.                        |
