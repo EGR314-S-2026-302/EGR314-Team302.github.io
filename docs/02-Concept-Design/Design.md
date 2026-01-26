@@ -4,7 +4,7 @@ title: Concept Generation and Design Ideation
 
 # Goal of the Exploration Device
 
-The goal of our exploration device is to safely collect meaningful environmental information from hazardous or inaccessible environments while minimizing operator risk and cognitive load. The Amphibot V1 is designed to scout unknown terrain, provide real-time visual and sensor feedback, and communicate system state clearly to a human operator. The device emphasizes modularity, rapid deployment, and observable cause-and-effect interactions between user input and system response.
+The goal of our exploration device is to safely collect meaningful environmental information from hazardous or inaccessible environments while minimizing operator risk. The Amphibot V1 is designed to scout unknown terrain, provide real-time visual and sensor feedback, and communicate system state clearly to the operator. The device emphasizes modularity, rapid deployment, and observable cause-and-effect interactions between user input and system response.
 
 On top of actually working as an explorer, it's also meant to teach and demonstrate embedded systems design. Using UART-connected modular PCBs, sensor–actuator feedback loops, and straightforward human–machine interfaces, the project lets anyone watching easily understand how embedded systems sense their environment, make decisions, and take action in real-world situations.
 
@@ -38,19 +38,19 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 ---
 
-## Easy of Deployment & Initial Use
+## Ease of Deployment & Initial Use
 
 | Need / Requirement                         | Feature                         | Details                                                                 |
 | ------------------------------------------ | ------------------------------- | ----------------------------------------------------------------------- |
-| Easy of Deployment & Initial Use           | Throwable chassis               | Can be tossed into hazardous areas to start a mission quickly.         |
-| Easy of Deployment & Initial Use           | Compact body                    | Fits through narrow openings and tight spaces.                          |
-| Easy of Deployment & Initial Use           | One-button power on             | Starts up with a single press—no complicated steps.                     |
-| Easy of Deployment & Initial Use           | Auto-leveling system            | Stabilizes itself after landing so it’s ready to drive.                 |
-| Easy of Deployment & Initial Use           | Reset-to-home mode              | Returns to a default ready state for the next operator.                 |
-| Easy of Deployment & Initial Use           | Magnetic docking pad            | Snaps onto a dock for quick pickup, storage, and charging.              |
-| Easy of Deployment & Initial Use           | Foldable components             | Folds down to reduce size during transport.                             |
-| Easy of Deployment & Initial Use           | Lanyard-assisted drop           | Lets you lower it safely into shafts or openings.                       |
-| Easy of Deployment & Initial Use           | Pre-armed standby mode          | Wakes up instantly after deployment with no extra setup.                |
+| Ease of Deployment & Initial Use           | Throwable chassis               | Can be tossed into hazardous areas to start a mission quickly.         |
+| Ease of Deployment & Initial Use           | Compact body                    | Fits through narrow openings and tight spaces.                          |
+| Ease of Deployment & Initial Use           | One-button power on             | Starts up with a single press—no complicated steps.                     |
+| Ease of Deployment & Initial Use           | Auto-leveling system            | Stabilizes itself after landing so it’s ready to drive.                 |
+| Ease of Deployment & Initial Use           | Reset-to-home mode              | Returns to a default ready state for the next operator.                 |
+| Ease of Deployment & Initial Use           | Magnetic docking pad            | Snaps onto a dock for quick pickup, storage, and charging.              |
+| Ease of Deployment & Initial Use           | Foldable components             | Folds down to reduce size during transport.                             |
+| Ease of Deployment & Initial Use           | Lanyard-assisted drop           | Lets you lower it safely into shafts or openings.                       |
+| Ease of Deployment & Initial Use           | Pre-armed standby mode          | Wakes up instantly after deployment with no extra setup.                |
 
 ---
 
@@ -325,7 +325,7 @@ This concept is built for situations where the environment is dangerous and the 
 
 ![Concept 3](images/304f1b.png)
 
-This concept is designed for fast deployment, simple operation, and strong situational awareness in hazardous environments. The throwable chassis and one-button power let an operator begin a mission immediately with minimal setup. Auto-leveling stabilizes the device after landing so it becomes drive-ready quickly, and reset-to-home returns it to a default ready state for the next operator. Omni-directional wheels allow precise positioning in tight spaces, while a low center of gravity reduces tipping risk during turns and bumps. A two-wheel efficient drive reduces power use, improving runtime and reliability.
+This concept is designed for fast deployment, simple operation, and strong situational awareness in hazardous environments. The throwable chassis lets an operator begin a mission immediately with minimal setup. Auto-leveling stabilizes the device  at landing and allows for an immediate drive-rady response, and reset-to-home returns it to a default ready state for the next operator. Omni-directional wheels allow precise positioning in tight spaces, while a low center of gravity reduces tipping risk during turns and bumps. A two-wheel efficient drive reduces power use, improving runtime and reliability.
 
 FPV video to a personal device and a live telemetry display keep the operator informed at a safe distance. The hazard scoring algorithm simplifies environmental risk into one easy-to-read indicator. On-screen prompts reduce confusion and training time. Thermal shutdown protects the system from overheating, and replaceable battery packs plus a replaceable outer shell reduce downtime and make field recovery practical.
 
