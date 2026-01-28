@@ -1,5 +1,8 @@
 ---
 title: Appendix
+tags:
+- EGR314
+- Team XPED
 ---
 
 ## Appendix Content

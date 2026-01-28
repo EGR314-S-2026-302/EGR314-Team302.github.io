@@ -1,5 +1,8 @@
 ---
 title: Concept Generation and Design Ideation
+tags:
+- EGR314
+- Team XPED
 ---
 
 ## Goal of the Exploration Device
@@ -112,7 +115,7 @@ Throughout the brainstorming process, several design priorities stayed consisten
 
 ---
 
-### User Cues & Feedback (Ease of Use)
+### User Cues & Feedback (Easy of Use)
 
 | Need / Requirement                            | Feature                         | Details                                                                 |
 | ------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------- |

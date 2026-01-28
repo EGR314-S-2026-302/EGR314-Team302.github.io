@@ -1,5 +1,8 @@
 ---
 title: Appendix - Extra Team Organization Information
+tags:
+- EGR314
+- Team XPED
 ---
 
 ## Team Goals
