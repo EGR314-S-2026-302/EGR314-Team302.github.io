@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#header" class="md-skip">
+        <a href="#project-requirements" class="md-skip">
           Skip to content
         </a>
       
@@ -538,6 +538,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -566,6 +568,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -574,9 +578,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#header" class="md-nav__link">
+  <a href="#team-level-project-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Header
+      Team-Level Project Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-level-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module-Level Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module-Level Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-requirements-wireless-communication-esp32" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Requirements — Wireless Communication (ESP32)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-requirements-sensor-hmi-pic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Requirements — Sensor &amp; HMI (PIC)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-requirements-actuator-control-pic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Requirements — Actuator Control (PIC)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirement-ownership-by-team-member" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirement Ownership by Team Member
     </span>
   </a>
   
@@ -713,6 +768,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -721,9 +778,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#header" class="md-nav__link">
+  <a href="#team-level-project-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Header
+      Team-Level Project Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-level-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module-Level Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module-Level Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-requirements-wireless-communication-esp32" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Requirements — Wireless Communication (ESP32)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-requirements-sensor-hmi-pic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Requirements — Sensor &amp; HMI (PIC)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-requirements-actuator-control-pic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Requirements — Actuator Control (PIC)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirement-ownership-by-team-member" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirement Ownership by Team Member
     </span>
   </a>
   
@@ -752,10 +860,307 @@
   
 
 
-  <h1>Project Requirements</h1>
-
-<h2 id="header">Header</h2>
-<p>Add content</p>
+<h1 id="project-requirements">Project Requirements</h1>
+<p>The purpose of this section is to translate the features of the selected design concept into clear, measurable engineering requirements. These requirements define the minimum functionality needed for the system to be considered successful, as well as target goals and optional stretch objectives. Together, they guide subsystem design, team responsibility, and verification throughout the project.</p>
+<hr>
+<h2 id="team-level-project-requirements">Team-Level Project Requirements</h2>
+<p>This table defines the overall system requirements for the exploration device. Each requirement is tied directly to a feature from the selected design concept and includes a minimum threshold, a target goal, and whether it is considered a stretch requirement.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement Description</th>
+<th>Minimum Threshold</th>
+<th>Target Goal</th>
+<th>Feature Addressed</th>
+<th>Stretch (Yes/No)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The system must support wireless communication with the user</td>
+<td>One-way Wi-Fi communication</td>
+<td>Two-way Wi-Fi using MQTT</td>
+<td>Wireless communication</td>
+<td>No</td>
+</tr>
+<tr>
+<td>The system must provide live video feedback</td>
+<td>Video stream available</td>
+<td>Video latency under 500 ms</td>
+<td>FPV camera</td>
+<td>No</td>
+</tr>
+<tr>
+<td>The robot must be able to move forward and backward</td>
+<td>Basic bidirectional motion</td>
+<td>Smooth, speed-controlled motion</td>
+<td>Wheeled propulsion</td>
+<td>No</td>
+</tr>
+<tr>
+<td>The system must support an emergency stop</td>
+<td>Stop within 1 second</td>
+<td>Stop within 250 ms</td>
+<td>Emergency stop</td>
+<td>No</td>
+</tr>
+<tr>
+<td>The system must calculate a hazard score from sensor data</td>
+<td>Safe / unsafe indication</td>
+<td>Scaled hazard score (0–100)</td>
+<td>Hazard scoring algorithm</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The system must display information locally</td>
+<td>Text-only display</td>
+<td>Text with simple graphics</td>
+<td>OLED HMI</td>
+<td>No</td>
+</tr>
+<tr>
+<td>The system must report orientation and motion</td>
+<td>IMU detected</td>
+<td>Stable IMU data ≥ 50 Hz</td>
+<td>IMU sensor</td>
+<td>No</td>
+</tr>
+<tr>
+<td>The system must operate on a replaceable battery</td>
+<td>≥ 5 minutes runtime</td>
+<td>≥ 15 minutes runtime</td>
+<td>Replaceable battery pack</td>
+<td>No</td>
+</tr>
+<tr>
+<td>The system must protect itself from overheating</td>
+<td>Warning issued</td>
+<td>Automatic thermal shutdown</td>
+<td>Thermal protection</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>The system must use modular UART communication</td>
+<td>UART link established</td>
+<td>CRC-checked UART communication</td>
+<td>UART daisy chain</td>
+<td>No</td>
+</tr>
+<tr>
+<td>The system must reset quickly for repeated demos</td>
+<td>Manual reset</td>
+<td>Reset time under 10 seconds</td>
+<td>Fast reset sequence</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="module-level-requirements">Module-Level Requirements</h2>
+<p>Each subsystem has its own set of requirements that support the overall system functionality. These module-level requirements ensure that each team member is responsible for a critical portion of the system.</p>
+<hr>
+<h3 id="module-requirements-wireless-communication-esp32">Module Requirements — Wireless Communication (ESP32)</h3>
+<p><strong>Teammate A: Mihir Patel</strong></p>
+<table>
+<thead>
+<tr>
+<th>Requirement Description</th>
+<th>Minimum Threshold</th>
+<th>Target Goal</th>
+<th>Stretch (Yes/No)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SMD 3.3 V switching regulator</td>
+<td>Output ≥ 3.2 V</td>
+<td>Stable 3.3 V output</td>
+<td>No</td>
+</tr>
+<tr>
+<td>ESP32 microcontroller</td>
+<td>Boots successfully</td>
+<td>Runs Wi-Fi and MQTT</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Wireless communication</td>
+<td>One-way data transfer</td>
+<td>Two-way MQTT messaging</td>
+<td>No</td>
+</tr>
+<tr>
+<td>UART communication with system bus</td>
+<td>Basic TX/RX</td>
+<td>Structured packets with CRC</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Video data handling</td>
+<td>Video stream present</td>
+<td>Stable low-latency stream</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Connection loss handling</td>
+<td>Detect disconnection</td>
+<td>Trigger safe-stop behavior</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="module-requirements-sensor-hmi-pic">Module Requirements — Sensor &amp; HMI (PIC)</h3>
+<p><strong>Teammate B: Lakshanand Sugumar</strong></p>
+<table>
+<thead>
+<tr>
+<th>Requirement Description</th>
+<th>Minimum Threshold</th>
+<th>Target Goal</th>
+<th>Stretch (Yes/No)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SMD PIC microcontroller</td>
+<td>Main loop runs</td>
+<td>Interrupt-driven firmware</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Serial sensor interface</td>
+<td>IMU detected</td>
+<td>Stable IMU data ≥ 50 Hz</td>
+<td>No</td>
+</tr>
+<tr>
+<td>OLED display</td>
+<td>Text output visible</td>
+<td>Text with simple graphics</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Pushbutton input</td>
+<td>Button press detected</td>
+<td>Debounced, interrupt-based</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Hazard score output</td>
+<td>Binary indicator</td>
+<td>Scaled hazard score</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>UART communication</td>
+<td>Basic messaging</td>
+<td>Structured sensor messages</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="module-requirements-actuator-control-pic">Module Requirements — Actuator Control (PIC)</h3>
+<p><strong>Teammate C: Raunak Singh</strong></p>
+<table>
+<thead>
+<tr>
+<th>Requirement Description</th>
+<th>Minimum Threshold</th>
+<th>Target Goal</th>
+<th>Stretch (Yes/No)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Motor control</td>
+<td>Forward/backward motion</td>
+<td>Speed-controlled driving</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Motor driver interface</td>
+<td>Driver responds</td>
+<td>PWM with current limiting</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Emergency stop response</td>
+<td>Stop within 1 second</td>
+<td>Stop within 250 ms</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Overcurrent protection</td>
+<td>Warning only</td>
+<td>Automatic motor shutdown</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Thermal protection</td>
+<td>Warning issued</td>
+<td>Automatic shutdown</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>UART status reporting</td>
+<td>Basic motor state</td>
+<td>Motor telemetry reporting</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="requirement-ownership-by-team-member">Requirement Ownership by Team Member</h2>
+<p>The table below assigns each major requirement area to the responsible team member and subsystem.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement Area</th>
+<th>Team Member</th>
+<th>Subsystem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wireless communication and video streaming</td>
+<td>Mihir Patel</td>
+<td>ESP32 Wireless Gateway</td>
+</tr>
+<tr>
+<td>Remote commands and MQTT messaging</td>
+<td>Mihir Patel</td>
+<td>ESP32 Wireless Gateway</td>
+</tr>
+<tr>
+<td>Sensor data acquisition and hazard scoring</td>
+<td>Lakshanand Sugumar</td>
+<td>PIC Sensor + HMI</td>
+</tr>
+<tr>
+<td>Local display and user input</td>
+<td>Lakshanand Sugumar</td>
+<td>PIC Sensor + HMI</td>
+</tr>
+<tr>
+<td>Motor control and movement</td>
+<td>Raunak Singh</td>
+<td>PIC Actuator Control</td>
+</tr>
+<tr>
+<td>Emergency stop and safety behavior</td>
+<td>Raunak Singh</td>
+<td>PIC Actuator Control</td>
+</tr>
+<tr>
+<td>UART communication and system integration</td>
+<td>All teammates</td>
+<td>System-level</td>
+</tr>
+</tbody>
+</table>
+<hr>
 
 
 
