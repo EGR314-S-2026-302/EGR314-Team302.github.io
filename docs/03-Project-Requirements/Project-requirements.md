@@ -95,3 +95,24 @@ The table below assigns each major requirement area to the responsible team memb
 
 ---
 
+## Feature-to-Requirement Development and Design Rationale
+
+**Design Methodology**
+
+The project requirements were developed using a top-down design approach. The system was first defined as an exploration robot intended to operate in unknown or difficult-to-access environments while reducing the need for human presence. From this starting point, the team identified system goals, constraints, and stakeholder needs, which were then translated into clear engineering requirements. Throughout the process, design decisions were guided by what could realistically be built by a three-person team within a limited budget and a single semester, with an emphasis on safety, reliability, automation, and modularity.
+
+**Requirement Prioritization**
+
+To keep the design focused and manageable, requirements were ranked by importance. Safety and reliability were treated as the highest priorities, followed by data accuracy and productivity. Automation and upgradability were considered important but secondary goals. This prioritization helped the team make informed tradeoffs and distinguish between required features and stretch goals.
+
+**Feature-to-Requirement Translation**
+
+The need to explore environments efficiently led to requirements for controlled mobility, including bidirectional motor control, speed regulation, and emergency stop behavior. Safety concerns added requirements for overcurrent and thermal protection.
+Accurate data collection was another key goal, resulting in requirements for consistent sensor detection, minimum data rates, and hazard scoring to convert raw sensor readings into useful information.
+To reduce human involvement in the operating environment, the system requires wireless communication for remote monitoring and control, with two-way messaging and live video identified as target capabilities.
+A local human–machine interface was included to provide immediate feedback and allow manual input through readable displays and reliable pushbuttons.
+Finally, the system was designed to be modular, using structured UART communication so future sensors, actuators, or expansion boards can be added without redesigning the core system.
+
+**Stakeholder Considerations**
+
+This design benefits end users by reducing manpower and improving efficiency, supports future developers through a modular and reusable architecture, and allows evaluators to assess performance using clear and measurable criteria. Overall, the system balances practical exploration goals with the constraints of an academic project.
