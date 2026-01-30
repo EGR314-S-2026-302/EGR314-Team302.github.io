@@ -15,7 +15,7 @@ The purpose of this section is to translate the features of the selected design 
 
 This table defines the overall system requirements for the exploration device. Each requirement is tied directly to a feature from the selected design concept and includes a minimum threshold, a target goal, and whether it is considered a stretch requirement.
 
-| Requirement Description | Minimum Threshold | Target Goal | Feature Addressed | Stretch (Yes/No) |
+| Requirement Description | Measure of Threshold | Target Measure | Feature Addressed | Stretch (Yes/No) |
 |------------------------|------------------|-------------|------------------|------------------|
 | The system must support wireless communication with the user | One-way Wi-Fi communication | Two-way Wi-Fi using MQTT | Wireless communication | No |
 | The system must provide live video feedback | Video stream available | Video latency under 500 ms | FPV camera | No |
@@ -40,7 +40,7 @@ Each subsystem has its own set of requirements that support the overall system f
 ### Module Requirements — Wireless Communication (ESP32)  
 **Teammate A: Mihir Patel**
 
-| Requirement Description | Minimum Threshold | Target Goal | Stretch (Yes/No) |
+| Requirement Description | Measure of Threshold | Target Measure | Stretch (Yes/No) |
 |------------------------|------------------|-------------|------------------|
 | SMD 3.3 V switching regulator | Output ≥ 3.2 V | Stable 3.3 V output | No |
 | ESP32 microcontroller | Boots successfully | Runs Wi-Fi and MQTT | No |
@@ -54,7 +54,7 @@ Each subsystem has its own set of requirements that support the overall system f
 ### Module Requirements — Sensor & HMI (PIC)  
 **Teammate B: Lakshanand Sugumar**
 
-| Requirement Description | Minimum Threshold | Target Goal | Stretch (Yes/No) |
+| Requirement Description | Measure of Threshold | Target Measure | Stretch (Yes/No) |
 |------------------------|------------------|-------------|------------------|
 | SMD PIC microcontroller | Main loop runs | Interrupt-driven firmware | No |
 | Serial sensor interface | IMU detected | Stable IMU data ≥ 50 Hz | No |
@@ -68,7 +68,7 @@ Each subsystem has its own set of requirements that support the overall system f
 ### Module Requirements — Actuator Control (PIC)  
 **Teammate C: Raunak Singh**
 
-| Requirement Description | Minimum Threshold | Target Goal | Stretch (Yes/No) |
+| Requirement Description | Measure of Threshold | Target Measure | Stretch (Yes/No) |
 |------------------------|------------------|-------------|------------------|
 | Motor control | Forward/backward motion | Speed-controlled driving | No |
 | Motor driver interface | Driver responds | PWM with current limiting | No |
