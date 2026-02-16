@@ -2,7 +2,7 @@
 title: Concept Generation and Design Ideation
 tags:
 - EGR314
-- Team XPED
+- Concept Generation and Design Ideation
 ---
 
 ## Goal of the Exploration Device

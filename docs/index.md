@@ -2,7 +2,7 @@
 title: Welcome
 tags:
 - EGR314 
-- Team Report
+- Welcome Page - Team Report
 ---
 <center>
 <font size="8">Team XPED<br>

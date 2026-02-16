@@ -2,7 +2,7 @@
 title: Process Diagram 
 tags:
 - EGR314
-- Team XPED
+- Process Diagram
 ---
 
 # Block Diagram

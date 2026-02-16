@@ -2,7 +2,7 @@
 title: Team Organization
 tags:
 - EGR314
-- Team XPED
+- Team Organization
 ---
 
 ## Team Charter

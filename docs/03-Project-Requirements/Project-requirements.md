@@ -2,7 +2,7 @@
 title: Project Requirements
 tags:
 - EGR314
-- Team XPED
+- Project Requirements
 ---
 
 # Project Requirements

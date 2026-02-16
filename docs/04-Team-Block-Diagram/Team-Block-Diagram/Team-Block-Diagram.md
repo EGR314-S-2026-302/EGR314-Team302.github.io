@@ -2,7 +2,7 @@
 title: Team Block Diagram 
 tags:
 - EGR314
-- Team XPED
+- Team Block Diagram
 ---
 
 # Block Diagram
