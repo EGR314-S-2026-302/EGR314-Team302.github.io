@@ -23,7 +23,7 @@ The Team Block Diagram illustrates the physical and logical layout of the three-
 
 The Process Diagram presents the sequence of communication between the Web interface, ESP32, Sensor + HMI board, and Actuator board. It captures both recurring telemetry updates and event-driven interactions such as drive commands and emergency stop conditions.
 
-- **[Team Process Diagram](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/Communication-Process-Diagram/Communication-Process-Diagram.md)** – Sequence diagram, message flow, user interactions  
+- **[Team Process Diagram](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/The-Process-Diagram/The-Process-Diagram.md)** – Sequence diagram, message flow, user interactions 
 
 ---
 
