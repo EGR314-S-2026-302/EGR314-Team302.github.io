@@ -55,5 +55,5 @@ You can navigate to the main sections of our report using the top menu or the li
 - **[Concept Design](02-Concept-Design/Design.md)** – Ideation process, R6 amphibot selection, key features  
 - **[Project Requirements](03-Project-Requirements/Project-Requirements.md)** – UART specs, serial peripherals, performance targets  
 - **[Team Block Diagram](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/Team-Block-Diagram/Team-Block-Diagram.md)** – 3-PCB daisy chain, data flow, interfaces  
-- **[Team Process Diagram](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/The-Process-Diagram/The-Process-Diagram.md)** – Sequence diagram, message flow, user interactions  
+- **[Team Process Diagram](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/Communication-Process-Diagram/Communication-Process-Diagram.md)** – Sequence diagram, message flow, user interactions  
 - **[Message Types](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/Message-Structure/Message-Structure.md)** – 64-byte packet format, byte-level definitions  
