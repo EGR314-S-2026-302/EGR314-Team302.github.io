@@ -15,7 +15,7 @@ This section documents the full team-level system architecture for the R6 Recon 
 
 The Team Block Diagram illustrates the physical and logical layout of the three-PCB system, including the ESP32 Wireless Gateway, Sensor + HMI subsystem, and Actuator subsystem. It highlights the UART daisy-chain order, power distribution strategy, and interface separation between local peripherals and inter-board communication.
 
-- **[Team Block Diagram](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/Part-1:-Team-Block-Diagram/Part-1:-Team-Block-Diagram.md)** – 3-PCB daisy chain, data flow, interfaces  
+- **[Team Block Diagram](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/01-Team-Block-Diagram/01-Team-Block-Diagram.md)** – 3-PCB daisy chain, data flow, interfaces  
 
 ---
 
@@ -23,7 +23,7 @@ The Team Block Diagram illustrates the physical and logical layout of the three-
 
 The Process Diagram presents the sequence of communication between the Web interface, ESP32, Sensor + HMI board, and Actuator board. It captures both recurring telemetry updates and event-driven interactions such as drive commands and emergency stop conditions.
 
-- **[Team Process Diagram](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/Part-2:-Communication-Process-Diagram/Part-2:-Communication-Process-Diagram.md)** – Sequence diagram, message flow, user interactions  
+- **[Team Process Diagram](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/02-Communication-Process-Diagram/02-Communication-Process-Diagram.md)** – Sequence diagram, message flow, user interactions  
 
 ---
 
@@ -31,4 +31,4 @@ The Process Diagram presents the sequence of communication between the Web inter
 
 The Message Structure section defines the standardized 64-byte UART packet format used across the system. It documents all message types, byte-level field definitions, and payload structures that enable deterministic routing and reliable communication between subsystems.
 
-- **[Message Types](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/Part-3:-Message-Structure/Part-3:-Message-Structure.md)** – 64-byte packet format, byte-level definitions  
+- **[Message Types](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/03-Message-Structure/03-Message-Structure.md)** – 64-byte packet format, byte-level definitions  
