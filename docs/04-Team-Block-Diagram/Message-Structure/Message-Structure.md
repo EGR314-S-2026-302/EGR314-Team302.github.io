@@ -14,9 +14,7 @@ config:
   packet:
     bitsPerRow: 16
     bitWidth: 64
-```
-
-```packet-beta
+packet-beta
 title Message
 0:  "0x41"
 1:  "0x5A"
