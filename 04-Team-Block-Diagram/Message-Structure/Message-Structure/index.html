@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://egr314-s-2026-302.github.io/EGR314-Team302.github.io/04-Team-Block-Diagram/Message-Structure/Message-Structure/">
       
       
-        <link rel="prev" href="../../Team-Diagram/">
+        <link rel="prev" href="../../../03-Project-Requirements/Project-requirements/">
       
       
         <link rel="next" href="../../Team-Block-Diagram/Team-Block-Diagram/">
@@ -88,6 +88,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#message-types" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -275,8 +280,16 @@
   
     
     
+      
+  
+  
+    
+  
+  
+    
+    
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../Team-Diagram/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
     
@@ -285,6 +298,9 @@
 
         </a>
       </li>
+    
+  
+
     
   
 
@@ -534,8 +550,6 @@
       
         
       
-        
-      
     
     
       
@@ -576,27 +590,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Team-Diagram/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Block Diagram, Protocol, and Message Structure
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -618,10 +611,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -632,8 +625,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             Message Structure
           </label>
@@ -652,6 +645,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Message Structure
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -662,6 +668,124 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0001-set-motor-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0001 — Set Motor Speed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0002-request-sensor-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0002 — Request Sensor Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0003-sensor-data-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0003 — Sensor Data Response
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0004-motor-telemetry-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0004 — Motor Telemetry Response
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0005-emergency-stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0005 — Emergency Stop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0006-error-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0006 — Error Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0007-error-message-human-readable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0007 — Error Message (Human-readable)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0008-system-status-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0008 — System Status Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0043-button-pushed-hmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0043 — Button Pushed (HMI)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-frame-absolute-bytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Frame (absolute bytes)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -846,6 +970,115 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0001-set-motor-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0001 — Set Motor Speed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0002-request-sensor-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0002 — Request Sensor Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0003-sensor-data-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0003 — Sensor Data Response
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0004-motor-telemetry-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0004 — Motor Telemetry Response
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0005-emergency-stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0005 — Emergency Stop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0006-error-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0006 — Error Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0007-error-message-human-readable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0007 — Error Message (Human-readable)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0008-system-status-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0008 — System Status Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-0x0043-button-pushed-hmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type 0x0043 — Button Pushed (HMI)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-frame-absolute-bytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Frame (absolute bytes)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -868,7 +1101,413 @@
   
 
 
-  <h1>Message Structure</h1>
+<h1 id="message-types">Message Types</h1>
+<p>As described in the Project Description, messages sent between individual boards must follow the standardized 64-byte packet structure below:</p>
+<hr>
+<p>config:
+  packet:
+    bitsPerRow: 16
+    bitWidth: 64</p>
+<hr>
+<p>packet-beta
+title Message
+0: "0x41"
+1: "0x5a"
+2: "Source ID"
+3: "Dest ID"
+4-61: "Message (Variable Length &lt;= 58 Bytes)"
+62: "0x59"
+63: "0x42"</p>
+<p>What goes in the message payload (bytes 4–61) is defined by the team and is documented below.</p>
+<hr>
+<h2 id="message-type-overview">Message Type Overview</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Message Type (uint16_t)</th>
+<th>Short Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0x0001</td>
+<td>Set Motor Speed</td>
+</tr>
+<tr>
+<td style="text-align: right;">0x0002</td>
+<td>Request Sensor Data</td>
+</tr>
+<tr>
+<td style="text-align: right;">0x0003</td>
+<td>Sensor Data Response</td>
+</tr>
+<tr>
+<td style="text-align: right;">0x0004</td>
+<td>Motor Telemetry Response</td>
+</tr>
+<tr>
+<td style="text-align: right;">0x0005</td>
+<td>Emergency Stop</td>
+</tr>
+<tr>
+<td style="text-align: right;">0x0006</td>
+<td>Error Code</td>
+</tr>
+<tr>
+<td style="text-align: right;">0x0007</td>
+<td>Error Message (string)</td>
+</tr>
+<tr>
+<td style="text-align: right;">0x0008</td>
+<td>System Status Code</td>
+</tr>
+<tr>
+<td style="text-align: right;">0x0043</td>
+<td>Button Pushed (HMI)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="message-type-0x0001-set-motor-speed">Message Type 0x0001 — Set Motor Speed</h2>
+<p>Used when Web or HMI sets desired motor speed.</p>
+<p>Absolute byte positions in full 64-byte frame:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Byte (absolute)</th>
+<th>Field</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td>0x41 (Header)</td>
+<td>byte</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td>0x5A (Header)</td>
+<td>byte</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Source ID</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Dest ID</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">4–5</td>
+<td>Message Type = 0x0001</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Motor ID</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">7–8</td>
+<td>Speed (RPM)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">9–61</td>
+<td>Reserved / zero-fill</td>
+<td>bytes</td>
+</tr>
+<tr>
+<td style="text-align: right;">62</td>
+<td>0x59 (Footer)</td>
+<td>byte</td>
+</tr>
+<tr>
+<td style="text-align: right;">63</td>
+<td>0x42 (Footer)</td>
+<td>byte</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="message-type-0x0002-request-sensor-data">Message Type 0x0002 — Request Sensor Data</h2>
+<p>ESP32 requests updated sensor data from Sensor + HMI board.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Byte (absolute)</th>
+<th>Field</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4–5</td>
+<td>Message Type = 0x0002</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Sensor ID</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">7–61</td>
+<td>Reserved / zero-fill</td>
+<td>bytes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="message-type-0x0003-sensor-data-response">Message Type 0x0003 — Sensor Data Response</h2>
+<p>Sensor + HMI → ESP32 containing multiple readings.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Byte (absolute)</th>
+<th>Field</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4–5</td>
+<td>Message Type = 0x0003</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">6–7</td>
+<td>IMU Tilt (degrees ×100)</td>
+<td>int16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">8–9</td>
+<td>Temperature (°C ×100)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">10–11</td>
+<td>Hazard Score (0–100 ×100 optional)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">12–13</td>
+<td>Humidity (% ×100) <em>(optional/expandable)</em></td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">14–61</td>
+<td>Reserved / additional sensor fields</td>
+<td>bytes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="message-type-0x0004-motor-telemetry-response">Message Type 0x0004 — Motor Telemetry Response</h2>
+<p>Actuator board → upstream reporting motor state.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Byte (absolute)</th>
+<th>Field</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4–5</td>
+<td>Message Type = 0x0004</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Motor State (0=Stop,1=Fwd,2=Rev)</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">7–8</td>
+<td>Current Speed (RPM)</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">9–61</td>
+<td>Reserved / telemetry expansion</td>
+<td>bytes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="message-type-0x0005-emergency-stop">Message Type 0x0005 — Emergency Stop</h2>
+<p>Issued by HMI or ESP32 (web) or generated by fail-safe logic.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Byte (absolute)</th>
+<th>Field</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4–5</td>
+<td>Message Type = 0x0005</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Stop Source (1=Web,2=HMI,3=FailSafe)</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">7–61</td>
+<td>Reserved</td>
+<td>bytes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="message-type-0x0006-error-code">Message Type 0x0006 — Error Code</h2>
+<p>Compact fault reporting (numeric).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Byte (absolute)</th>
+<th>Field</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4–5</td>
+<td>Message Type = 0x0006</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Subsystem ID</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>Error Code (numeric)</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">8–61</td>
+<td>Reserved</td>
+<td>bytes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="message-type-0x0007-error-message-human-readable">Message Type 0x0007 — Error Message (Human-readable)</h2>
+<p>Human-readable ASCII message (null-terminated). Max 55 characters usable.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Byte (absolute)</th>
+<th>Field</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4–5</td>
+<td>Message Type = 0x0007</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">6–60</td>
+<td>Error String (max 55 chars)</td>
+<td>char[&lt;=55]</td>
+</tr>
+<tr>
+<td style="text-align: right;">61</td>
+<td>Null terminator (0x00) — ensure present if string shorter</td>
+<td>byte</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: Strings must include a terminating 0x00. Maximum usable characters = 55.</p>
+</blockquote>
+<hr>
+<h2 id="message-type-0x0008-system-status-code">Message Type 0x0008 — System Status Code</h2>
+<p>Periodic health/status code.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Byte (absolute)</th>
+<th>Field</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4–5</td>
+<td>Message Type = 0x0008</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Status Code</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">7–61</td>
+<td>Reserved</td>
+<td>bytes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="message-type-0x0043-button-pushed-hmi">Message Type 0x0043 — Button Pushed (HMI)</h2>
+<p>Local HMI button events forwarded upstream.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Byte (absolute)</th>
+<th>Field</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4–5</td>
+<td>Message Type = 0x0043</td>
+<td>uint16_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Button Number</td>
+<td>uint8_t</td>
+</tr>
+<tr>
+<td style="text-align: right;">7–61</td>
+<td>Reserved</td>
+<td>bytes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="example-frame-absolute-bytes">Example Frame (absolute bytes)</h2>
+<p>ESP32 (Source ID = 0x01) requests sensor data from Sensor board (Dest ID = 0x02):</p>
+<ul>
+<li>Byte 0:  0x41  </li>
+<li>Byte 1:  0x5A  </li>
+<li>Byte 2:  0x01  (Source ID = ESP32)  </li>
+<li>Byte 3:  0x02  (Dest ID = Sensor board)  </li>
+<li>Byte 4:  0x00  (Message Type high byte)  </li>
+<li>Byte 5:  0x02  (Message Type low byte → 0x0002 Request Sensor Data)  </li>
+<li>Byte 6:  0x01  (Sensor ID)  </li>
+<li>Byte 7–61: zero-filled/reserved  </li>
+<li>Byte 62: 0x59  </li>
+<li>Byte 63: 0x42</li>
+</ul>
+<hr>
 
 
 
@@ -876,7 +1515,8 @@
 
 
 
-
+  
+  
 
 
 
@@ -906,7 +1546,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="../../Team-Diagram/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Block Diagram, Protocol, and Message Structure">
+          <a href="../../../03-Project-Requirements/Project-requirements/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Project Requirements">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
@@ -916,7 +1556,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Block Diagram, Protocol, and Message Structure
+                Project Requirements
               </div>
             </div>
           </a>
