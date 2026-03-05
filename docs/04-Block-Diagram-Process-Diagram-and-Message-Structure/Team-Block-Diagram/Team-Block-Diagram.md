@@ -7,7 +7,7 @@ tags:
 
 # Block Diagram
 
-![Team 302 Block Diagram](EGR314_Team302_Blockdiagram.drawio.png)
+![Team 302 Block Diagram](EGR314_Team302_Blockdiagram_3_5.drawio.png)
 
 ---
 
