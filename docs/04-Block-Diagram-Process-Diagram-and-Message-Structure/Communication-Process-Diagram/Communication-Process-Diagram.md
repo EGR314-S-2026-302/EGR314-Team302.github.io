@@ -5,7 +5,7 @@ tags:
 - Process Diagram
 ---
 
-# Block Diagram
+# Process Diagram
 
 ![Team 302 Process Diagram](Team302_process_diagram.drawio.png)
 
