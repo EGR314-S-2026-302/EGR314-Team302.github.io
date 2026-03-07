@@ -46,7 +46,7 @@
       
         
         
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
@@ -145,7 +145,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
@@ -162,7 +162,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" data-md-scrollfix="">
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -362,7 +362,7 @@
 </a>
     </div>
   
-  <ul class="md-nav__list" data-md-scrollfix>
+  <ul class="md-nav__list" data-md-scrollfix="">
     
       
       
@@ -556,7 +556,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -575,7 +575,7 @@
             <span class="md-nav__icon md-icon"></span>
             04 Block Diagram Process Diagram and Message Structure
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -623,7 +623,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked="">
         
           
           <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
@@ -642,7 +642,7 @@
             <span class="md-nav__icon md-icon"></span>
             Communication Process Diagram
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -928,12 +928,12 @@
 <p>Sends motor telemetry (current speed, state).</p>
 </li>
 <li>
-<p>Sensor + HMI PIC → ESP32  </p>
+<p>Sensor + HMI PIC → ESP32</p>
 </li>
-<li>Forwards motor telemetry upstream.</li>
-<li>Appends sensor data (IMU, temperature).</li>
+<li>Reads IMU and temperature sensor data.</li>
+<li>Computes hazard score from sensor readings.</li>
 <li>
-<p>Computes hazard score and includes it in the outgoing frame.</p>
+<p>Forwards motor telemetry and appends sensor data and hazard score into the outgoing upstream frame.</p>
 </li>
 <li>
 <p>ESP32 → MQTT Server  </p>
@@ -956,10 +956,10 @@
 <h2 id="3-local-hmi-display-update">3. Local HMI Display Update</h2>
 <h3 id="flow_2">Flow:</h3>
 <ol>
-<li>Sensor + HMI PIC  </li>
-<li>Receives telemetry and hazard information.</li>
+<li>Sensor + HMI PIC</li>
+<li>On each telemetry cycle, reads local sensor data and receives motor telemetry from the Actuator board.</li>
 <li>
-<p>Updates OLED display via I²C.</p>
+<p>Computes updated hazard score and updates OLED display via I²C.</p>
 </li>
 <li>
 <p>In-Person User  </p>
@@ -982,13 +982,7 @@
 <li>
 <p>ESP32 → MQTT Server  </p>
 </li>
-<li>
-<p>Publishes telemetry update.</p>
-</li>
-<li>
-<p>ESP32 → Sensor + HMI PIC  </p>
-</li>
-<li>May request updated sensor values if required.</li>
+<li>Publishes telemetry update.</li>
 </ol>
 <h3 id="function-benefits_3">Function &amp; Benefits:</h3>
 <ul>
@@ -1013,6 +1007,22 @@
 <li><strong>User Safety Compliance:</strong> Meets safety requirements for public demonstrations.</li>
 </ul>
 <hr>
+<h2 id="6-wireless-link-loss-safe-stop-fallback">6. Wireless Link Loss &amp; Safe-Stop Fallback</h2>
+<h3 id="flow_5">Flow:</h3>
+<ol>
+<li>ESP32 detects MQTT connection loss.</li>
+<li>ESP32 sends SAFE_STOP frame downstream via UART.</li>
+<li>Sensor + HMI PIC forwards frame to Actuator PIC.</li>
+<li>Actuator PIC disables motor outputs.</li>
+<li>OLED displays connection lost status.</li>
+</ol>
+<h3 id="function-benefits_5">Function &amp; Benefits:</h3>
+<ul>
+<li><strong>Automatic Failsafe:</strong> Motors halt without any user action required.</li>
+<li><strong>Requirement Coverage:</strong> Directly satisfies the connection loss handling 
+  requirement.</li>
+</ul>
+<hr>
 <h1 id="summary-of-functional-alignment">Summary of Functional Alignment</h1>
 <h3 id="latency-predictability">Latency &amp; Predictability</h3>
 <p>Structured UART forwarding ensures consistent propagation time between boards.</p>
@@ -1023,7 +1033,7 @@
 <h3 id="educational-clarity">Educational Clarity</h3>
 <p>The sequence explicitly shows every hop in the daisy chain, reinforcing modular architecture understanding.</p>
 <h3 id="reliability-safety">Reliability &amp; Safety</h3>
-<p>Emergency stop, acknowledgment frames, and telemetry monitoring ensure stable system behavior under fault conditions.</p>
+<p>Emergency stop, wireless link loss detection, acknowledgment frames, and telemetry monitoring ensure stable system behavior under both user-triggered and automatic fault conditions.</p>
 
 
 
@@ -1047,7 +1057,7 @@
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
   Back to top

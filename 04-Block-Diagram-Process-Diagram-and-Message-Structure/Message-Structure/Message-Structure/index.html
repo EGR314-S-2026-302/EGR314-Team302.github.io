@@ -46,7 +46,7 @@
       
         
         
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
@@ -145,7 +145,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
@@ -162,7 +162,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" data-md-scrollfix="">
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -362,7 +362,7 @@
 </a>
     </div>
   
-  <ul class="md-nav__list" data-md-scrollfix>
+  <ul class="md-nav__list" data-md-scrollfix="">
     
       
       
@@ -556,7 +556,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -575,7 +575,7 @@
             <span class="md-nav__icon md-icon"></span>
             04 Block Diagram Process Diagram and Message Structure
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -670,7 +670,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked="">
         
           
           <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
@@ -689,7 +689,7 @@
             <span class="md-nav__icon md-icon"></span>
             Message Structure
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -741,12 +741,21 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
   <a href="#message-type-overview" class="md-nav__link">
     <span class="md-ellipsis">
       Message Type Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#board-id-assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Board ID Assignments
     </span>
   </a>
   
@@ -989,12 +998,21 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
   <a href="#message-type-overview" class="md-nav__link">
     <span class="md-ellipsis">
       Message Type Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#board-id-assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Board ID Assignments
     </span>
   </a>
   
@@ -1179,6 +1197,36 @@
 </tbody>
 </table>
 <hr>
+<h2 id="board-id-assignments">Board ID Assignments</h2>
+<table>
+<thead>
+<tr>
+<th>Board</th>
+<th>Source / Dest ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESP32 Wireless Gateway (Mihir)</td>
+<td>0x01</td>
+</tr>
+<tr>
+<td>Sensor + HMI PIC (Lakshanand)</td>
+<td>0x02</td>
+</tr>
+<tr>
+<td>Actuator Control PIC (Raunak)</td>
+<td>0x03</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: All message types follow the standard 64-byte frame structure. 
+Bytes 0–3 (header + Source/Dest ID) and bytes 62–63 (footer) are identical 
+across all message types as defined in Message Type 0x0001. Individual message 
+tables show payload bytes 4–61 only, except where the full frame is shown.</p>
+</blockquote>
+<hr>
 <h2 id="message-type-0x0001-set-motor-speed">Message Type 0x0001 — Set Motor Speed</h2>
 <p>Used when Web or HMI sets desired motor speed.</p>
 <p>Absolute byte positions in full 64-byte frame:</p>
@@ -1297,7 +1345,7 @@
 <tr>
 <td style="text-align: right;">8–9</td>
 <td>Temperature (°C ×100)</td>
-<td>uint16_t</td>
+<td>int16_t</td>
 </tr>
 <tr>
 <td style="text-align: right;">10–11</td>
@@ -1369,7 +1417,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">6</td>
-<td>Stop Source (1=Web,2=HMI,3=FailSafe)</td>
+<td>Stop Source (1=Web,2=HMI,3=Failsafe)</td>
 <td>uint8_t</td>
 </tr>
 <tr>
@@ -1432,8 +1480,8 @@
 </tr>
 <tr>
 <td style="text-align: right;">6–60</td>
-<td>Error String (max 55 chars)</td>
-<td>char[&lt;=55]</td>
+<td>Error String (null-terminated ASCII)</td>
+<td>char[55]</td>
 </tr>
 <tr>
 <td style="text-align: right;">61</td>
@@ -1542,7 +1590,7 @@
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
   Back to top
