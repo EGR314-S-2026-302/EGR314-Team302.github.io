@@ -51,10 +51,10 @@ Our sequence diagram captures the end-to-end flow of data and control between th
 1. Actuator PIC → Sensor + HMI PIC  
    - Sends motor telemetry (current speed, state).
 
-2. Sensor + HMI PIC → ESP32  
-   - Forwards motor telemetry upstream.
-   - Appends sensor data (IMU, temperature).
-   - Computes hazard score and includes it in the outgoing frame.
+2. Sensor + HMI PIC → ESP32
+   - Reads IMU and temperature sensor data.
+   - Computes hazard score from sensor readings.
+   - Forwards motor telemetry and appends sensor data and hazard score into the outgoing upstream frame.
 
 3. ESP32 → MQTT Server  
    - Publishes telemetry and hazard score to the cloud.
@@ -74,9 +74,9 @@ Our sequence diagram captures the end-to-end flow of data and control between th
 
 ### Flow:
 
-1. Sensor + HMI PIC  
-   - Receives telemetry and hazard information.
-   - Updates OLED display via I²C.
+1. Sensor + HMI PIC
+   - On each telemetry cycle, reads local sensor data and receives motor telemetry from the Actuator board.
+   - Computes updated hazard score and updates OLED display via I²C.
 
 2. In-Person User  
    - Views live speed, hazard score, and system status on OLED.
@@ -97,9 +97,6 @@ Our sequence diagram captures the end-to-end flow of data and control between th
 
 2. ESP32 → MQTT Server  
    - Publishes telemetry update.
-
-3. ESP32 → Sensor + HMI PIC  
-   - May request updated sensor values if required.
 
 ### Function & Benefits:
 
@@ -125,6 +122,24 @@ Our sequence diagram captures the end-to-end flow of data and control between th
 - **Clear Error Propagation:** Faults travel both upstream and downstream.
 - **User Safety Compliance:** Meets safety requirements for public demonstrations.
 
+--- 
+
+## 6. Wireless Link Loss & Safe-Stop Fallback
+
+### Flow:
+
+1. ESP32 detects MQTT connection loss.
+2. ESP32 sends SAFE_STOP frame downstream via UART.
+3. Sensor + HMI PIC forwards frame to Actuator PIC.
+4. Actuator PIC disables motor outputs.
+5. OLED displays connection lost status.
+
+### Function & Benefits:
+
+- **Automatic Failsafe:** Motors halt without any user action required.
+- **Requirement Coverage:** Directly satisfies the connection loss handling 
+  requirement.
+
 ---
 
 # Summary of Functional Alignment
@@ -142,4 +157,4 @@ Each board forwards or consumes frames based on destination ID, allowing future 
 The sequence explicitly shows every hop in the daisy chain, reinforcing modular architecture understanding.
 
 ### Reliability & Safety
-Emergency stop, acknowledgment frames, and telemetry monitoring ensure stable system behavior under fault conditions.
+Emergency stop, wireless link loss detection, acknowledgment frames, and telemetry monitoring ensure stable system behavior under both user-triggered and automatic fault conditions.

@@ -9,13 +9,13 @@ tags:
 
 > **"Team XPED commits to modular mastery and tactical innovation, delivering the R6 Recon Amphibot through UART standards, equitable rotations, and relentless demo execution, exploring hazards as a united engineering force."**
 
-Started Jan 15 Discord: Brainstormed "Exploration Device = tool for difficult terrains," listing underwater sky-drop mappers, volcanic probes, cave robots, modular bunches, mothership jettison chains (sonar stages → WiFi surface), R6 drone/rover hybrids (wheels + propellers/camera detach). Voted charter to unify process around EGR314 UART modularity for tactical showcase success.
+On January 15th, the team held an initial brainstorming session to define the scope of the exploration device. Ideas explored included underwater mappers, volcanic probes, cave robots, and modular mothership-based systems using sonar and Wi-Fi stages. The team ultimately converged on an R6-inspired amphibious rover concept combining wheeled land propulsion, flip-out fins for water traversal, and a UART daisy-chain architecture. The team charter was adopted to unify the team around EGR314 standards and a shared goal of a successful Innovation Showcase demonstration.
 
 ## Product Mission Statement
 
 > **"The R6 Siege Recon Amphibot scouts hazardous land/water terrains with fused FPV sensors and wireless commands, providing operators actionable data from environments too perilous for humans — modular, throwable, tactical."**
 
-From [ProductPlan](https://www.productplan.com/glossary/product-mission/): Focused "why" (safe recon). Post-charter poll narrowed underwater/volcanic/cave bunches + mothership stages to R6 amphibot (wheels land, fins/propellers water, UART mothership link), prioritizes operator intel over complexity.
+The mission statement was developed following a structured product mission framework and reflects the team's core design philosophy: prioritizing operator safety and actionable intelligence over system complexity. Following the initial brainstorm, the team narrowed the concept from broader ideas such as underwater exploration, volcanic probes, and cave mapping, down to the R6 Recon Amphibot: a wheeled land rover with flip-out fins for water traversal, connected via a UART daisy-chain architecture.
 
 ## Other Organizational Information
 

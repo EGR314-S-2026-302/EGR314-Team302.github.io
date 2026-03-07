@@ -7,13 +7,13 @@ tags:
 
 ## Team Goals
 
-1. **Develop Functional Amphibot Prototype**: Design and integrate 3 modular UART-chained PCBs (Sensor/Actuator/Ctrl-HMI) into a cohesive R6 Recon Amphibot for land/water scouting.
+1. **Develop Functional Amphibot Prototype**: Design and integrate 3 modular UART-chained PCBs (ESP32 Wireless Gateway, Sensor + HMI PIC, Actuator Control PIC) into a cohesive R6 Recon Amphibot for land/water scouting.
 
 2. **Ensure EGR314 Standards Compliance**: Implement exact 2x4 IDC pinout, serial sensor/actuator reqs, PIC+ESP32 MCUs, SMD components, and verified UART passthrough before integration.
 
-3. **Deliver Tactical Recon Value**: Create fragile FPV scout enabling safe hazard exploration (gas/obstacles) via real-time MQTT alerts, where humans cannot safely go.
+3. **Deliver Tactical Recon Value**: Create a lightweight throwable FPV scout enabling safe hazard exploration (gas/obstacles) via real-time MQTT alerts, where humans cannot safely go.
 
-4. **Master Modular Embedded Systems**: Build expertise in Cadence PCB design, UART daisy-chain protocol, PID control, MQTT bidirectional wireless, and amphibious mechanical integration.
+4. **Master Modular Embedded Systems**: Build expertise in KiCAD/Cadence PCB design, UART daisy-chain protocol, PID control, MQTT bidirectional wireless, and amphibious mechanical integration.
 
 5. **Execute Professional Engineering Workflow**: Maintain team GitHub repos, individual datasheets, structured documentation, Gantt tracking, and weekly milestone reviews mimicking industry cadence.
 
@@ -31,7 +31,7 @@ _**Appendix Table 1**: Project Roles and Duties_
 
 ## Process for Roles
 
-1. Roles rotate every **2 weeks** to give each member experience. 
+1. Core roles are assigned based on each member's strengths, with the Project Monitor role rotating to distribute scheduling responsibility evenly. 
 2. Assignments made during weekly meetings by consensus.
 3. Team members support one another to ensure role responsibilities are met.
 4. Technical responsibilities (e.g., sensors, actuators, PCB design tasks) assigned based on strengths and interests, but cross-training encouraged.

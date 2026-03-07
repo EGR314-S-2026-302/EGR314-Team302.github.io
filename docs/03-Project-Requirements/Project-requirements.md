@@ -17,7 +17,7 @@ This table defines the overall system requirements for the exploration device. E
 
 | Requirement Description | Measure of Threshold | Target Measure | Feature Addressed | Stretch (Yes/No) |
 |------------------------|------------------|-------------|------------------|------------------|
-| The system must support wireless communication with the user | One-way Wi-Fi communication | Two-way Wi-Fi using MQTT | Wireless communication | No |
+| The system must support wireless communication with the user | One-way Wi-Fi communication | Two-way Wi-Fi using MQTT | MQTT Wireless communication | No |
 | The system must provide live video feedback | Video stream available | Video latency under 500 ms | FPV camera | No |
 | The robot must be able to move forward and backward | Basic bidirectional motion | Smooth, speed-controlled motion | Wheeled propulsion | No |
 | The system must support an emergency stop | Stop within 1 second | Stop within 250 ms | Emergency stop | No |
@@ -26,7 +26,7 @@ This table defines the overall system requirements for the exploration device. E
 | The system must report orientation and motion | IMU detected | Stable IMU data ≥ 50 Hz | IMU sensor | No |
 | The system must operate on a replaceable battery | ≥ 5 minutes runtime | ≥ 15 minutes runtime | Replaceable battery pack | No |
 | The system must protect itself from overheating | Warning issued | Automatic thermal shutdown | Thermal protection | Yes |
-| The system must use modular UART communication | UART link established | CRC-checked UART communication | UART daisy chain | No |
+| The system must use modular UART communication across all three boards | UART link established between two boards | CRC-checked UART daisy-chain across all three subsystems | UART daisy chain | No |
 | The system must reset quickly for repeated demos | Manual reset | Reset time under 10 seconds | Fast reset sequence | No |
 
 ---

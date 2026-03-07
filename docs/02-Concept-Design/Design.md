@@ -246,14 +246,14 @@ This concept is designed to feel like a “smart assistant” rather than a full
 
 ### Team Responsibility Split — Concept 1 (3 Teammates)
 
-1. **Internet-based Two-way Wireless Communication (Teammate A)**  
-   Teammate A will implement the two-way wireless communication using Wi-Fi, including sending waypoint and control commands to the robot and streaming telemetry and video data back to the user interface. They will also handle reliability concerns such as reconnect behavior and safe operation if the connection drops.
+1. **Internet-based Two-way Wireless Communication (Mihir Patel)**  
+   Mihir will implement the two-way wireless communication using Wi-Fi + MQTT, including sending waypoint and control commands to the robot and streaming telemetry and video data back to the user interface. He will also handle reliability concerns such as reconnect behavior and safe operation if the connection drops.
 
-2. **Human–Machine Interface via Screen and Buttons (Teammate B)**  
-   Teammate B will design the screen-based interface showing live video, telemetry, hazard score, and navigation status. They will implement manual override controls, on-screen prompts, and clear alerts so the user always understands what the robot is doing.
+2. **Sensor Input + Human–Machine Interface (Lakshanand Sugumar)**  
+   Lakshanand will design the screen-based HMI showing live telemetry, hazard score, and navigation status. He will also integrate environmental sensors and implement sensor fusion so the operator always has accurate, real-time situational awareness.
 
-3. **Sensor + Autonomy Controlled Response (Teammate C)**  
-   Teammate C will integrate sensor data, implement sensor fusion and hazard scoring, and develop waypoint navigation logic. They will also handle controlled responses between sensors and actuators to ensure smooth and safe autonomous movement.
+3. **Actuator Control + Autonomy Response (Raunak Singh)**  
+   Raunak will implement motor control, waypoint navigation logic, and autonomous motion behaviors. He will handle controlled actuator responses to sensor inputs and build safety behaviors to ensure smooth and safe autonomous movement.
 
 ---
 
@@ -282,14 +282,14 @@ This concept is built for situations where the environment is dangerous and the 
 
 ### Team Responsibility Split — Concept 2 (3 Teammates)
 
-1. **Internet-based Two-way Wireless Communication (Teammate A)**  
-   Teammate A will handle basic two-way wireless communication for sending control commands and receiving video and system status information. The focus will be on maintaining a stable and reliable connection rather than advanced automation features.
+1. **Internet-based Two-way Wireless Communication (Mihir Patel)**  
+   Mihir will handle basic two-way wireless communication using Wi-Fi + MQTT for sending control commands and receiving system status information. The focus will be on maintaining a stable and reliable connection rather than advanced automation features.
 
-2. **Human–Machine Interface via Screen and Buttons (Teammate B)**  
-   Teammate B will design a minimal screen-based interface that displays essential information such as the video feed, battery level, and overall system state. Controls will be kept simple and easy to understand to reduce user confusion.
+2. **Sensor Input + Human–Machine Interface (Lakshanand Sugumar)**  
+   Lakshanand will design a minimal HMI displaying essential information such as battery level, LED-based status indicators, and overall system state. He will handle basic sensor integration to support fault detection and provide the operator with key system readings.
 
-3. **Sensor + Actuator Controlled Response (Teammate C)**  
-   Teammate C will implement motor control, basic sensor integration, and safety behaviors such as controlled shutdown and fault detection. Their focus will be on reliable operation and low-cost implementation rather than advanced autonomy.
+3. **Actuator Control + Motion Behavior (Raunak Singh)**  
+   Raunak will implement motor control, basic motion behaviors, and safety responses such as controlled shutdown and fault detection. His focus will be on reliable, low-cost actuation rather than advanced autonomy.
 
 ---
 
@@ -306,7 +306,8 @@ This concept is built for situations where the environment is dangerous and the 
 | Mobility & Terrain    | Low center of gravity design    | High     | Reduces tipping risk during turns, bumps, and impacts.                  |
 | Mobility & Terrain    | Two-wheel efficient drive       | High     | Uses fewer motors to reduce power draw and simplify the drivetrain.     |
 | Mobility & Terrain    | Flexible / compliant chassis    | Medium   | Helps maintain contact and control on uneven ground.                    |
-| Water Capability      | Propellers                      | Medium   | Deploys fins to swim across short water sections when needed.           |
+| Water Capability      | Flip-out fins / Propellers      | Medium   | Deploys flip-out 
+fins for water propulsion across short sections when needed. |
 | Remote Control & UX   | Smartphone app                  | High     | Wireless control from a personal device (phone/tablet).                 |
 | Remote Control & UX   | On-screen prompts               | High     | Step-by-step guidance so new users can operate confidently.             |
 | Remote Control & UX   | Waypoint navigation             | High     | Moves to set points to reduce operator workload.                        |
@@ -327,20 +328,20 @@ This concept is built for situations where the environment is dangerous and the 
 
 ![Concept 3](EGR314_Concept3.png)
 
-This concept is designed for fast deployment, simple operation, and strong situational awareness in hazardous environments. The throwable chassis lets an operator begin a mission immediately with minimal setup. Auto-leveling stabilizes the device  at landing and allows for an immediate drive-rady response, and reset-to-home returns it to a default ready state for the next operator. Omni-directional wheels allow precise positioning in tight spaces, while a low center of gravity reduces tipping risk during turns and bumps. A two-wheel efficient drive reduces power use, improving runtime and reliability.
+This concept is designed for fast deployment, simple operation, and strong situational awareness in hazardous environments. The throwable chassis lets an operator begin a mission immediately with minimal setup. Auto-leveling stabilizes the device  at landing and allows for an immediate drive-rady response, and reset-to-home returns it to a default ready state for the next operator. A low center of gravity reduces tipping risk during turns and bumps. A two-wheel efficient drive reduces power use, improving runtime and reliability. The compact chassis allows precise navigation in tight spaces without requiring complex wheel configurations.
 
 FPV video to a personal device and a live telemetry display keep the operator informed at a safe distance. The hazard scoring algorithm simplifies environmental risk into one easy-to-read indicator. On-screen prompts reduce confusion and training time. Thermal shutdown protects the system from overheating, and replaceable battery packs plus a replaceable outer shell reduce downtime and make field recovery practical.
 
 ### Team Responsibility Split - Concept 3 (3 Teammates)
 
-1. **Internet-based Two-way Wireless Communication (Teammate A)**  
-   Teammate A will implement the two-way wireless link (Wi-Fi), including sending control commands from the phone to the robot and streaming FPV video + telemetry back to the user. They will handle reliability issues such as reconnect behavior, message formatting/protocol, and safe behavior if the signal drops.
+1. **Internet-based Two-way Wireless Communication (Mihir Patel)**  
+   Mihir will implement the two-way wireless link (Wi-Fi + MQTT), including sending control commands from the smartphone app to the robot and streaming FPV video and telemetry back to the user. He will handle reliability issues such as reconnect behavior, message formatting/protocol, and safe fallback behavior if the signal drops.
 
-2. **Human–Machine Interface via Screen and Buttons (Teammate B)**  
-   Teammate B will build the smartphone interface (screen-based HMI) showing live video, hazard score, battery level, connection strength, and temperature status. They will design the control layout (joystick/d-pad + key buttons), implement on-screen prompts, and create clear alerts (low battery, weak signal, high temperature). They will ensure the emergency stop is always visible and easy to access.
+2. **Sensor Input + Human–Machine Interface (Lakshanand Sugumar)**  
+   Lakshanand will integrate environmental sensors (gas, temperature, humidity, IMU) and implement the hazard scoring algorithm. He will also build the OLED-based local HMI showing real-time system status, alerts, and hazard score so the operator always has on-device feedback without relying solely on the wireless link.
 
-3. **Sensor + Actuator Controlled Response (Teammate C)**  
-   Teammate C will implement motor control and motion behavior (two-wheel efficient driving and omni-directional movement as supported by the mechanical design). They will integrate sensor inputs used for hazard scoring, implement waypoint navigation logic, and build safety behaviors such as thermal shutdown, emergency stop response, and safe fallback if communication is lost.
+3. **Actuator Control + Motion Behavior (Raunak Singh)**  
+   Raunak will implement motor control and motion behavior including two-wheel driving, flip-out fin deployment for water operation, and PID-based speed regulation. He will handle safety behaviors such as thermal shutdown, emergency stop response, and safe motor fallback if communication is lost.
 
 ---
 
@@ -348,7 +349,7 @@ FPV video to a personal device and a live telemetry display keep the operator in
 
 ## Why concept 3?
 
-We chose Concept 3 because it combines the most valuable strengths of Concept 1 and Concept 2 into one realistic build. Compared to Concept 1, Concept 3 keeps the key “smart” benefits (waypoint navigation, hazard scoring, telemetry + FPV) but avoids heavy autonomy complexity that increases implementation risk and debugging time. Compared to Concept 2, Concept 3 keeps the core practical build advantages (throwable deployment, replaceable shell, replaceable battery, reliability-focused design) while adding essential awareness tools (FPV + telemetry + hazard score + prompts) that make the device safer and easier to use. Overall, Concept 3 provides the best balance of feasibility, safety, usability, and mission effectiveness—making it the strongest option to build.
+We chose Concept 3 because it combines the most valuable strengths of Concept 1 and Concept 2 into one realistic build. Compared to Concept 1, Concept 3 keeps the key “smart” benefits (waypoint navigation, hazard scoring, telemetry + FPV) but avoids heavy autonomy complexity that increases implementation risk and debugging time. Compared to Concept 2, Concept 3 keeps the core practical build advantages (throwable deployment, replaceable shell, replaceable battery, reliability-focused design) while adding essential awareness tools (FPV + telemetry + hazard score + prompts) that make the device safer and easier to use. Overall, Concept 3 provides the best balance of feasibility, safety, usability, and mission effectiveness—making it the strongest option to build. This aligns directly with our team mission: to deliver a modular, throwable amphibious scout that provides operators actionable data from environments too perilous for humans like modular, throwable, tactical.
 
 ## What cues will make the device easier to use?
 
@@ -364,4 +365,4 @@ Durability is essential because operators need to trust the device enough to dep
 
 ## What instruction is needed to use the device?
 
-Instruction will be minimal and built into the experience. Users will have a one-page quick-start guide (deploy → connect → drive → interpret hazard score → recover/reset). The app will provide on-screen prompts for first-time setup, plus a short guided tutorial explaining basic driving, emergency stop, waypoint use, and how to read telemetry/hazard cues. Advanced features will be optional; basic driving + video should work immediately.
+Instruction will be minimal and built into the experience. Users will have a one-page quick-start guide (deploy → connect → drive → interpret hazard score → recover/reset). The web dashboard will provide on-screen prompts for key actions, and the OLED local display will show real-time status so the operator never has to open an app to check system state. Basic driving and video should work immediately after power-on.

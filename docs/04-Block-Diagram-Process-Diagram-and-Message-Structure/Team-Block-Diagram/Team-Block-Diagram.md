@@ -25,13 +25,13 @@ ESP32 Wireless Gateway → Sensor + HMI PIC → Actuator PIC
 
 Messages propagate from one microcontroller to the next using structured UART frames until the destination address matches the receiving board.
 
-Look under Individual Block Diagrams for detailed subsystem-specific schematics.
+See the Individual Block Diagrams section for detailed subsystem-level diagrams.
 
 ---
 
 # Block Diagram Decision-Making & Requirements Alignment
 
-## 1. Decision-Making Process
+## Decision-Making Process
 
 ### 1. Role-Based Functional Partitioning
 
@@ -121,15 +121,15 @@ Each subsystem includes:
 - 3.3V Switching Regulator
 - Microcontroller powered from regulated rail
 
-This prevents high-current motor activity from brown-out conditions on sensor or wireless boards.
+This prevents high-current motor activity from causing brownout conditions on the sensor or wireless boards.
 
 ---
 
-# 2. How the Block Diagram Meets Product Requirements
+## How the Block Diagram Meets Product Requirements
 
 ### Real-Time Feedback (< 500 ms)
 
-The UART daisy-chain uses deterministic packet forwarding, ensuring predictable latency.
+The FPV camera stream targets under 500 ms end-to-end latency over Wi-Fi. The UART daisy-chain uses deterministic packet forwarding, ensuring predictable latency for sensor data and actuator commands between boards.
 
 Local I²C and PWM communication operate at microcontroller clock speeds, enabling near real-time actuation and hazard reporting.
 
@@ -190,19 +190,4 @@ If wireless communication is lost:
 
 ---
 
-# How the Decision-Making Process Operated
-
-Our block diagram is a simplified representation of the full system.
-
-It demonstrates that:
-
-- Each subsystem includes the required voltage regulator.
-- Each subsystem includes a microcontroller.
-- Each subsystem includes upstream and downstream UART connections.
-- TX and RX lines are clearly shown entering and exiting each MCU.
-
-The diagram illustrates how information flows through the team:
-
-Web Interface → ESP32 Wireless Gateway → Sensor + HMI PIC → Actuator PIC  
-
-This mirrors both the physical ribbon cable layout and the logical message propagation through the UART daisy-chain.
+Together, these decisions produce a system that is modular, verifiable at the subsystem level, and straightforward to demonstrate at the Innovation Showcase.
