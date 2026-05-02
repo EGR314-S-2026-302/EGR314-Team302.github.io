@@ -676,6 +676,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#message-structure-design-and-decision-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Structure Design and Decision-Making
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-5-biggest-changes-to-software-design-since-the-software-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top 5 Biggest Changes to Software Design Since the Software Proposal
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -982,6 +1000,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#message-structure-design-and-decision-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Structure Design and Decision-Making
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-5-biggest-changes-to-software-design-since-the-software-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top 5 Biggest Changes to Software Design Since the Software Proposal
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1025,6 +1061,30 @@
 <ul>
 <li><strong><a href="../Message-Structure/Message-Structure/">Message Types</a></strong> – 64-byte packet format, byte-level definitions  </li>
 </ul>
+<hr>
+<h2 id="message-structure-design-and-decision-making">Message Structure Design and Decision-Making</h2>
+<p>The team's message structure was designed around three core constraints: the 64-byte UART packet limit set by the class protocol specification, the need for deterministic routing across a three-board daisy chain, and the requirement for safe broadcast behavior during fault conditions.</p>
+<p>The decision to use ASCII character board IDs rather than numeric hex IDs came from a practical debugging consideration. During early integration testing, being able to read the source and destination directly in a serial monitor output without a lookup table significantly reduced debugging time. The choice of AZ as the header and YB as the footer was inherited from the class specification and enforced by all three boards.</p>
+<p>The payload structure was kept intentionally simple. Message type occupies the first two bytes of the payload field, followed by data bytes specific to that message type, with the remainder zero-padded. This made it straightforward for each board to parse only the message types it needed to handle and forward everything else without modification.</p>
+<p>Broadcast messages using the asterisk destination ID were reserved exclusively for emergency stop and system status, ensuring that safety-critical signals always reached all boards regardless of their position in the chain.</p>
+<h2 id="top-5-biggest-changes-to-software-design-since-the-software-proposal">Top 5 Biggest Changes to Software Design Since the Software Proposal</h2>
+<ol>
+<li>
+<p>Switch from blocking MQTT to async MQTT using mqtt_as. The original software proposal assumed a simple blocking MQTT client. During development it became clear that a blocking client would lock up the entire firmware whenever the broker connection dropped, making the WiFi failsafe impossible to implement. Switching to the mqtt_as async library allowed UART polling, MQTT communication, heartbeat publishing, and camera handling to run concurrently without blocking each other.</p>
+</li>
+<li>
+<p>Board IDs changed from hex numbers to ASCII characters. The proposal used numeric board IDs matching the class template. During integration the team switched to ASCII character IDs where M represents Mihir's ESP32, L represents Lakshanand's sensor board, and R represents Raunak's actuator board. This made serial monitor debugging significantly easier since the source and destination were immediately readable without a lookup table.</p>
+</li>
+<li>
+<p>Camera commands were added as a separate MQTT topic subscription. The original design had a single MQTT subscribe topic for all commands. The camera control commands, capture, stream on, and stream off, were added as a separate dedicated topic to keep camera traffic isolated from motor and sensor commands and avoid command parsing conflicts.</p>
+</li>
+<li>
+<p>WiFi loss failsafe was extended to stop the camera stream. The original failsafe design only broadcast an emergency stop packet over UART. During development it became clear that an active camera stream would continue trying to publish frames even after the MQTT connection dropped, causing repeated errors. The failsafe was updated to explicitly stop the stream before broadcasting the emergency stop packet.</p>
+</li>
+<li>
+<p>UART transmission was rate-limited to 500ms minimum intervals. The original firmware sent UART packets as fast as needed without any rate limiting. During integration testing with all three boards connected, rapid back-to-back transmissions caused buffer overruns and dropped bytes on the receiving boards. A 500ms minimum interval between transmissions was added to the uart_send function to ensure reliable communication across the daisy chain.</p>
+</li>
+</ol>
 
 
 

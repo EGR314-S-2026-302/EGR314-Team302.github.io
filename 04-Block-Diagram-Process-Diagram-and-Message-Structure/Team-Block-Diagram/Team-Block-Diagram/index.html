@@ -954,7 +954,10 @@
 <p>The linear data flow through the system is:</p>
 <p>ESP32 Wireless Gateway → Sensor + HMI PIC → Actuator PIC  </p>
 <p>Messages propagate from one microcontroller to the next using structured UART frames until the destination address matches the receiving board.</p>
-<p>See the Individual Block Diagrams section for detailed subsystem-level diagrams.</p>
+<p>See the individual subsystem block diagrams for detailed layouts:
+<a href="https://mihir-patel-64.github.io/02-Block-Diagram/Block-Diagram/">Mihir Patel</a>,
+<a href="https://lakshanandsugumar.github.io">Lakshanand Sugumar</a>,
+<a href="https://ronnie772.github.io/Ronnie772Datasheet/">Raunak Singh</a></p>
 <hr>
 <h1 id="block-diagram-decision-making-requirements-alignment">Block Diagram Decision-Making &amp; Requirements Alignment</h1>
 <h2 id="decision-making-process">Decision-Making Process</h2>
@@ -1027,7 +1030,7 @@ Each subsystem includes:</p>
 <hr>
 <h2 id="how-the-block-diagram-meets-product-requirements">How the Block Diagram Meets Product Requirements</h2>
 <h3 id="real-time-feedback-500-ms">Real-Time Feedback (&lt; 500 ms)</h3>
-<p>The FPV camera stream targets under 500 ms end-to-end latency over Wi-Fi. The UART daisy-chain uses deterministic packet forwarding, ensuring predictable latency for sensor data and actuator commands between boards.</p>
+<p>The FPV camera stream was designed to target under 500 ms end-to-end latency over Wi-Fi, though live streaming was not demonstrated on the final hardware. The UART daisy-chain uses deterministic packet forwarding, ensuring predictable latency for sensor data and actuator commands between boards.</p>
 <p>Local I²C and PWM communication operate at microcontroller clock speeds, enabling near real-time actuation and hazard reporting.</p>
 <hr>
 <h3 id="modularity-scalability">Modularity &amp; Scalability</h3>

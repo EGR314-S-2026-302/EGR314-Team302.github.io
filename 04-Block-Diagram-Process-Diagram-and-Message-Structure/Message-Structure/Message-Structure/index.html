@@ -1267,20 +1267,29 @@
 <tr>
 <th>Board</th>
 <th>Source / Dest ID</th>
+<th>ASCII</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>ESP32 Wireless Gateway (Mihir)</td>
-<td>0x01</td>
+<td>'M'</td>
+<td>0x4D</td>
 </tr>
 <tr>
 <td>Sensor + HMI PIC (Lakshanand)</td>
-<td>0x02</td>
+<td>'L'</td>
+<td>0x4C</td>
 </tr>
 <tr>
 <td>Actuator Control PIC (Raunak)</td>
-<td>0x03</td>
+<td>'R'</td>
+<td>0x52</td>
+</tr>
+<tr>
+<td>Broadcast (all boards)</td>
+<td>'*'</td>
+<td>0x2A</td>
 </tr>
 </tbody>
 </table>
@@ -1617,17 +1626,17 @@ tables show payload bytes 4–61 only, except where the full frame is shown.</p>
 </table>
 <hr>
 <h2 id="example-frame-absolute-bytes">Example Frame (absolute bytes)</h2>
-<p>ESP32 (Source ID = 0x01) requests sensor data from Sensor board (Dest ID = 0x02):</p>
+<p>ESP32 (Source ID = 'M') requests sensor data from Sensor board (Dest ID = 'L'):</p>
 <ul>
-<li>Byte 0:  0x41  </li>
-<li>Byte 1:  0x5A  </li>
-<li>Byte 2:  0x01  (Source ID = ESP32)  </li>
-<li>Byte 3:  0x02  (Dest ID = Sensor board)  </li>
-<li>Byte 4:  0x00  (Message Type high byte)  </li>
-<li>Byte 5:  0x02  (Message Type low byte → 0x0002 Request Sensor Data)  </li>
-<li>Byte 6:  0x01  (Sensor ID)  </li>
-<li>Byte 7–61: zero-filled/reserved  </li>
-<li>Byte 62: 0x59  </li>
+<li>Byte 0:  0x41  (Header 'A')</li>
+<li>Byte 1:  0x5A  (Header 'Z')</li>
+<li>Byte 2:  0x4D  (Source ID = 'M', ESP32)</li>
+<li>Byte 3:  0x4C  (Dest ID = 'L', Sensor board)</li>
+<li>Byte 4:  0x00  (Message Type high byte)</li>
+<li>Byte 5:  0x02  (Message Type low byte → 0x0002 Request Sensor Data)</li>
+<li>Byte 6:  0x01  (Sensor ID)</li>
+<li>Byte 7–61: zero-filled/reserved</li>
+<li>Byte 62: 0x59</li>
 <li>Byte 63: 0x42</li>
 </ul>
 <hr>

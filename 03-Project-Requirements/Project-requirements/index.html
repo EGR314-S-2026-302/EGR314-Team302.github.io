@@ -950,7 +950,6 @@
 
 <h1 id="project-requirements">Project Requirements</h1>
 <p>The purpose of this section is to translate the features of the selected design concept into clear, measurable engineering requirements. These requirements define the minimum functionality needed for the system to be considered successful, as well as target goals and optional stretch objectives. Together, they guide subsystem design, team responsibility, and verification throughout the project.</p>
-<hr>
 <h2 id="team-level-project-requirements">Team-Level Project Requirements</h2>
 <p>This table defines the overall system requirements for the exploration device. Each requirement is tied directly to a feature from the selected design concept and includes a minimum threshold, a target goal, and whether it is considered a stretch requirement.</p>
 <table>
@@ -961,6 +960,7 @@
 <th>Target Measure</th>
 <th>Feature Addressed</th>
 <th>Stretch (Yes/No)</th>
+<th>Final Result</th>
 </tr>
 </thead>
 <tbody>
@@ -970,6 +970,7 @@
 <td>Two-way Wi-Fi using MQTT</td>
 <td>MQTT Wireless communication</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>The system must provide live video feedback</td>
@@ -977,6 +978,7 @@
 <td>Video latency under 500 ms</td>
 <td>FPV camera</td>
 <td>No</td>
+<td>⚠️ Not demonstrated on final hardware</td>
 </tr>
 <tr>
 <td>The robot must be able to move forward and backward</td>
@@ -984,6 +986,7 @@
 <td>Smooth, speed-controlled motion</td>
 <td>Wheeled propulsion</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>The system must support an emergency stop</td>
@@ -991,6 +994,7 @@
 <td>Stop within 250 ms</td>
 <td>Emergency stop</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>The system must calculate a hazard score from sensor data</td>
@@ -998,6 +1002,7 @@
 <td>Scaled hazard score (0–100)</td>
 <td>Hazard scoring algorithm</td>
 <td>Yes</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>The system must display information locally</td>
@@ -1005,6 +1010,7 @@
 <td>Text with simple graphics</td>
 <td>OLED HMI</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>The system must report orientation and motion</td>
@@ -1012,6 +1018,7 @@
 <td>Stable IMU data ≥ 50 Hz</td>
 <td>IMU sensor</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>The system must operate on a replaceable battery</td>
@@ -1019,6 +1026,7 @@
 <td>≥ 15 minutes runtime</td>
 <td>Replaceable battery pack</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>The system must protect itself from overheating</td>
@@ -1026,6 +1034,7 @@
 <td>Automatic thermal shutdown</td>
 <td>Thermal protection</td>
 <td>Yes</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>The system must use modular UART communication across all three boards</td>
@@ -1033,6 +1042,7 @@
 <td>CRC-checked UART daisy-chain across all three subsystems</td>
 <td>UART daisy chain</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>The system must reset quickly for repeated demos</td>
@@ -1040,13 +1050,12 @@
 <td>Reset time under 10 seconds</td>
 <td>Fast reset sequence</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 </tbody>
 </table>
-<hr>
 <h2 id="module-level-requirements">Module-Level Requirements</h2>
 <p>Each subsystem has its own set of requirements that support the overall system functionality. These module-level requirements ensure that each team member is responsible for a critical portion of the system.</p>
-<hr>
 <h3 id="module-requirements-wireless-communication-esp32">Module Requirements — Wireless Communication (ESP32)</h3>
 <p><strong>Teammate A: Mihir Patel</strong></p>
 <table>
@@ -1056,6 +1065,7 @@
 <th>Measure of Threshold</th>
 <th>Target Measure</th>
 <th>Stretch (Yes/No)</th>
+<th>Final Result</th>
 </tr>
 </thead>
 <tbody>
@@ -1064,40 +1074,45 @@
 <td>Output ≥ 3.2 V</td>
 <td>Stable 3.3 V output</td>
 <td>No</td>
+<td>Met - AP63203WU-7 produced stable 3.3V under full load</td>
 </tr>
 <tr>
 <td>ESP32 microcontroller</td>
 <td>Boots successfully</td>
 <td>Runs Wi-Fi and MQTT</td>
 <td>No</td>
+<td>Met - ESP32-S3 booted reliably and connected to MQTT broker</td>
 </tr>
 <tr>
 <td>Wireless communication</td>
 <td>One-way data transfer</td>
 <td>Two-way MQTT messaging</td>
 <td>No</td>
+<td>Met - Full publish/subscribe MQTT messaging achieved</td>
 </tr>
 <tr>
 <td>UART communication with system bus</td>
 <td>Basic TX/RX</td>
 <td>Structured packets with CRC</td>
 <td>No</td>
+<td>Met - 64-byte structured UART packets implemented and forwarded</td>
 </tr>
 <tr>
 <td>Video data handling</td>
 <td>Video stream present</td>
 <td>Stable low-latency stream</td>
 <td>Yes</td>
+<td>Partially Met - Camera firmware fully implemented but not demonstrated on final hardware</td>
 </tr>
 <tr>
 <td>Connection loss handling</td>
 <td>Detect disconnection</td>
 <td>Trigger safe-stop behavior</td>
 <td>Yes</td>
+<td>Met - WiFi failsafe implemented and verified</td>
 </tr>
 </tbody>
 </table>
-<hr>
 <h3 id="module-requirements-sensor-hmi-pic">Module Requirements — Sensor &amp; HMI (PIC)</h3>
 <p><strong>Teammate B: Lakshanand Sugumar</strong></p>
 <table>
@@ -1107,6 +1122,7 @@
 <th>Measure of Threshold</th>
 <th>Target Measure</th>
 <th>Stretch (Yes/No)</th>
+<th>Final Result</th>
 </tr>
 </thead>
 <tbody>
@@ -1115,40 +1131,45 @@
 <td>Main loop runs</td>
 <td>Interrupt-driven firmware</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>Serial sensor interface</td>
 <td>IMU detected</td>
 <td>Stable IMU data ≥ 50 Hz</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>OLED display</td>
 <td>Text output visible</td>
 <td>Text with simple graphics</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>Pushbutton input</td>
 <td>Button press detected</td>
 <td>Debounced, interrupt-based</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>Hazard score output</td>
 <td>Binary indicator</td>
 <td>Scaled hazard score</td>
 <td>Yes</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>UART communication</td>
 <td>Basic messaging</td>
 <td>Structured sensor messages</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 </tbody>
 </table>
-<hr>
 <h3 id="module-requirements-actuator-control-pic">Module Requirements — Actuator Control (PIC)</h3>
 <p><strong>Teammate C: Raunak Singh</strong></p>
 <table>
@@ -1158,6 +1179,7 @@
 <th>Measure of Threshold</th>
 <th>Target Measure</th>
 <th>Stretch (Yes/No)</th>
+<th>Final Result</th>
 </tr>
 </thead>
 <tbody>
@@ -1166,42 +1188,48 @@
 <td>Forward/backward motion</td>
 <td>Speed-controlled driving</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>Motor driver interface</td>
 <td>Driver responds</td>
 <td>PWM with current limiting</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>Emergency stop response</td>
 <td>Stop within 1 second</td>
 <td>Stop within 250 ms</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>Overcurrent protection</td>
 <td>Warning only</td>
 <td>Automatic motor shutdown</td>
 <td>Yes</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>Thermal protection</td>
 <td>Warning issued</td>
 <td>Automatic shutdown</td>
 <td>Yes</td>
+<td>Met</td>
 </tr>
 <tr>
 <td>UART status reporting</td>
 <td>Basic motor state</td>
 <td>Motor telemetry reporting</td>
 <td>No</td>
+<td>Met</td>
 </tr>
 </tbody>
 </table>
-<hr>
 <h2 id="requirement-ownership-by-team-member">Requirement Ownership by Team Member</h2>
-<p>The table below assigns each major requirement area to the responsible team member and subsystem.</p>
+<p>The table below assigns each major requirement area to the responsible team
+member and subsystem.</p>
 <table>
 <thead>
 <tr>
@@ -1248,18 +1276,13 @@
 </tr>
 </tbody>
 </table>
-<hr>
 <h2 id="feature-to-requirement-development-and-design-rationale">Feature-to-Requirement Development and Design Rationale</h2>
 <p><strong>Design Methodology</strong></p>
 <p>The project requirements were developed using a top-down design approach. The system was first defined as an exploration robot intended to operate in unknown or difficult-to-access environments while reducing the need for human presence. From this starting point, the team identified system goals, constraints, and stakeholder needs, which were then translated into clear engineering requirements. Throughout the process, design decisions were guided by what could realistically be built by a three-person team within a limited budget and a single semester, with an emphasis on safety, reliability, automation, and modularity.</p>
 <p><strong>Requirement Prioritization</strong></p>
 <p>To keep the design focused and manageable, requirements were ranked by importance. Safety and reliability were treated as the highest priorities, followed by data accuracy and productivity. Automation and upgradability were considered important but secondary goals. This prioritization helped the team make informed tradeoffs and distinguish between required features and stretch goals.</p>
 <p><strong>Feature-to-Requirement Translation</strong></p>
-<p>The need to explore environments efficiently led to requirements for controlled mobility, including bidirectional motor control, speed regulation, and emergency stop behavior. Safety concerns added requirements for overcurrent and thermal protection.
-Accurate data collection was another key goal, resulting in requirements for consistent sensor detection, minimum data rates, and hazard scoring to convert raw sensor readings into useful information.
-To reduce human involvement in the operating environment, the system requires wireless communication for remote monitoring and control, with two-way messaging and live video identified as target capabilities.
-A local human–machine interface was included to provide immediate feedback and allow manual input through readable displays and reliable pushbuttons.
-Finally, the system was designed to be modular, using structured UART communication so future sensors, actuators, or expansion boards can be added without redesigning the core system.</p>
+<p>The need to explore environments efficiently led to requirements for controlled mobility, including bidirectional motor control, speed regulation, and emergency stop behavior. Safety concerns added requirements for overcurrent and thermal protection. Accurate data collection was another key goal, resulting in requirements for consistent sensor detection, minimum data rates, and hazard scoring to convert raw sensor readings into useful information. To reduce human involvement in the operating environment, the system requires wireless communication for remote monitoring and control, with two-way messaging and live video identified as target capabilities. A local human-machine interface was included to provide immediate feedback and allow manual input through readable displays and reliable pushbuttons. Finally, the system was designed to be modular, using structured UART communication so future sensors, actuators, or expansion boards can be added without redesigning the core system.</p>
 <p><strong>Stakeholder Considerations</strong></p>
 <p>This design benefits end users by reducing manpower and improving efficiency, supports future developers through a modular and reusable architecture, and allows evaluators to assess performance using clear and measurable criteria. Overall, the system balances practical exploration goals with the constraints of an academic project.</p>
 

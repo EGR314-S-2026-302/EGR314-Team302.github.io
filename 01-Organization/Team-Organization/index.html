@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#team-charter" class="md-skip">
+        <a href="#team-organization" class="md-skip">
           Skip to content
         </a>
       
@@ -466,6 +466,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -494,6 +496,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -520,9 +524,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#other-organizational-information" class="md-nav__link">
+  <a href="#team-composition-and-roles" class="md-nav__link">
     <span class="md-ellipsis">
-      Other Organizational Information
+      Team Composition and Roles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#communication-and-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communication and Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-organizational-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Organizational Information
     </span>
   </a>
   
@@ -801,6 +823,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -827,9 +851,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#other-organizational-information" class="md-nav__link">
+  <a href="#team-composition-and-roles" class="md-nav__link">
     <span class="md-ellipsis">
-      Other Organizational Information
+      Team Composition and Roles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#communication-and-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communication and Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-organizational-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Organizational Information
     </span>
   </a>
   
@@ -858,20 +900,68 @@
   
 
 
-  <h1>Team Organization</h1>
-
+<h1 id="team-organization">Team Organization</h1>
 <h2 id="team-charter">Team Charter</h2>
 <blockquote>
-<p><strong>"Team XPED commits to modular mastery and tactical innovation, delivering the R6 Recon Amphibot through UART standards, equitable rotations, and relentless demo execution, exploring hazards as a united engineering force."</strong></p>
+<p>"Team XPED commits to modular mastery and tactical innovation, delivering the R6 Recon Amphibot through UART standards, equitable rotations, and relentless demo execution, exploring hazards as a united engineering force."</p>
 </blockquote>
-<p>On January 15th, the team held an initial brainstorming session to define the scope of the exploration device. Ideas explored included underwater mappers, volcanic probes, cave robots, and modular mothership-based systems using sonar and Wi-Fi stages. The team ultimately converged on an R6-inspired amphibious rover concept combining wheeled land propulsion, flip-out fins for water traversal, and a UART daisy-chain architecture. The team charter was adopted to unify the team around EGR314 standards and a shared goal of a successful Innovation Showcase demonstration.</p>
+<p>On January 15th, the team held an initial brainstorming session to define the
+scope of the exploration device. Ideas explored included underwater mappers,
+volcanic probes, cave robots, and modular mothership-based systems using sonar
+and Wi-Fi stages. The team ultimately converged on an R6-inspired amphibious
+rover concept combining wheeled land propulsion, flip-out fins for water
+traversal, and a UART daisy-chain architecture. The team charter was adopted
+to unify the team around EGR314 standards and a shared goal of a successful
+Innovation Showcase demonstration.</p>
 <h2 id="product-mission-statement">Product Mission Statement</h2>
 <blockquote>
-<p><strong>"The R6 Siege Recon Amphibot scouts hazardous land/water terrains with fused FPV sensors and wireless commands, providing operators actionable data from environments too perilous for humans — modular, throwable, tactical."</strong></p>
+<p>"The R6 Siege Recon Amphibot scouts hazardous land/water terrains with fused
+FPV sensors and wireless commands, providing operators actionable data from
+environments too perilous for humans, modular, throwable, tactical."</p>
 </blockquote>
-<p>The mission statement was developed following a structured product mission framework and reflects the team's core design philosophy: prioritizing operator safety and actionable intelligence over system complexity. Following the initial brainstorm, the team narrowed the concept from broader ideas such as underwater exploration, volcanic probes, and cave mapping, down to the R6 Recon Amphibot: a wheeled land rover with flip-out fins for water traversal, connected via a UART daisy-chain architecture.</p>
-<h2 id="other-organizational-information">Other Organizational Information</h2>
-<p>Other details about the organization structure of the team can be reviewed in <a href="https://egr314-s-2026-302.github.io/EGR314-Team302.github.io/Appendix/01-Organization-Information/Append-Organization/">"Appendix: Team Organization Information."</a></p>
+<p>The mission statement reflects the team's core design philosophy: prioritizing
+operator safety and actionable intelligence over system complexity. Following
+the initial brainstorm, the team narrowed the concept from broader ideas such
+as underwater exploration, volcanic probes, and cave mapping down to the R6
+Recon Amphibot, a wheeled land rover with flip-out fins for water traversal,
+connected via a UART daisy-chain architecture.</p>
+<h2 id="team-composition-and-roles">Team Composition and Roles</h2>
+<table>
+<thead>
+<tr>
+<th>Team Member</th>
+<th>Subsystem</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mihir Patel</td>
+<td>ESP32 Wireless Gateway</td>
+<td>Two-way MQTT communication, UART bridge, camera integration</td>
+</tr>
+<tr>
+<td>Lakshanand Sugumar</td>
+<td>Sensor + HMI</td>
+<td>Environmental sensors, hazard scoring, OLED display</td>
+</tr>
+<tr>
+<td>Raunak Singh</td>
+<td>Actuator Control</td>
+<td>Motor control, PID, fin deployment, safety behaviors</td>
+</tr>
+</tbody>
+</table>
+<h2 id="communication-and-workflow">Communication and Workflow</h2>
+<p>The team communicated through a shared GitHub organization repository, weekly
+in-person syncs, and a group messaging channel. All design decisions, schematic
+reviews, and integration milestones were tracked through GitHub commits and
+shared documentation. Role rotation was practiced to ensure all members
+understood each subsystem beyond their own board.</p>
+<h2 id="additional-organizational-information">Additional Organizational Information</h2>
+<p>Further details about team structure, meeting notes, and role assignments can
+be found in the
+<a href="../../Appendix/01-Organization-Information/Append-Organization/">Team Organization Appendix</a></p>
 
 
 
