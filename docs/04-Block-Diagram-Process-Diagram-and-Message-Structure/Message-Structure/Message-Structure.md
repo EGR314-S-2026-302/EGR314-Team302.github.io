@@ -47,11 +47,12 @@ What goes in the message payload (bytes 4–61) is defined by the team and is do
 
 ## Board ID Assignments
 
-| Board | Source / Dest ID |
-|-------|-----------------|
-| ESP32 Wireless Gateway (Mihir) | 0x01 |
-| Sensor + HMI PIC (Lakshanand) | 0x02 |
-| Actuator Control PIC (Raunak) | 0x03 |
+| Board | Source / Dest ID | ASCII |
+|-------|-----------------|-------|
+| ESP32 Wireless Gateway (Mihir) | 'M' | 0x4D |
+| Sensor + HMI PIC (Lakshanand) | 'L' | 0x4C |
+| Actuator Control PIC (Raunak) | 'R' | 0x52 |
+| Broadcast (all boards) | '*' | 0x2A |
 
 > Note: All message types follow the standard 64-byte frame structure. 
 Bytes 0–3 (header + Source/Dest ID) and bytes 62–63 (footer) are identical 
@@ -186,17 +187,17 @@ Local HMI button events forwarded upstream.
 
 ## Example Frame (absolute bytes)
 
-ESP32 (Source ID = 0x01) requests sensor data from Sensor board (Dest ID = 0x02):
+ESP32 (Source ID = 'M') requests sensor data from Sensor board (Dest ID = 'L'):
 
-- Byte 0:  0x41  
-- Byte 1:  0x5A  
-- Byte 2:  0x01  (Source ID = ESP32)  
-- Byte 3:  0x02  (Dest ID = Sensor board)  
-- Byte 4:  0x00  (Message Type high byte)  
-- Byte 5:  0x02  (Message Type low byte → 0x0002 Request Sensor Data)  
-- Byte 6:  0x01  (Sensor ID)  
-- Byte 7–61: zero-filled/reserved  
-- Byte 62: 0x59  
+- Byte 0:  0x41  (Header 'A')
+- Byte 1:  0x5A  (Header 'Z')
+- Byte 2:  0x4D  (Source ID = 'M', ESP32)
+- Byte 3:  0x4C  (Dest ID = 'L', Sensor board)
+- Byte 4:  0x00  (Message Type high byte)
+- Byte 5:  0x02  (Message Type low byte → 0x0002 Request Sensor Data)
+- Byte 6:  0x01  (Sensor ID)
+- Byte 7–61: zero-filled/reserved
+- Byte 62: 0x59
 - Byte 63: 0x42
 
 ---

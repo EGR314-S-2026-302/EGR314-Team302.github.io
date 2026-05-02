@@ -328,7 +328,7 @@ fins for water propulsion across short sections when needed. |
 
 ![Concept 3](EGR314_Concept3.png)
 
-This concept is designed for fast deployment, simple operation, and strong situational awareness in hazardous environments. The throwable chassis lets an operator begin a mission immediately with minimal setup. Auto-leveling stabilizes the device  at landing and allows for an immediate drive-rady response, and reset-to-home returns it to a default ready state for the next operator. A low center of gravity reduces tipping risk during turns and bumps. A two-wheel efficient drive reduces power use, improving runtime and reliability. The compact chassis allows precise navigation in tight spaces without requiring complex wheel configurations.
+This concept is designed for fast deployment, simple operation, and strong situational awareness in hazardous environments. The throwable chassis lets an operator begin a mission immediately with minimal setup. Auto-leveling stabilizes the device  at landing and allows for an immediate drive-ready response, and reset-to-home returns it to a default ready state for the next operator. A low center of gravity reduces tipping risk during turns and bumps. A two-wheel efficient drive reduces power use, improving runtime and reliability. The compact chassis allows precise navigation in tight spaces without requiring complex wheel configurations.
 
 FPV video to a personal device and a live telemetry display keep the operator informed at a safe distance. The hazard scoring algorithm simplifies environmental risk into one easy-to-read indicator. On-screen prompts reduce confusion and training time. Thermal shutdown protects the system from overheating, and replaceable battery packs plus a replaceable outer shell reduce downtime and make field recovery practical.
 
@@ -347,9 +347,11 @@ FPV video to a personal device and a live telemetry display keep the operator in
 
 # Design Questions & Answers
 
-## Why concept 3?
+## How We Selected Concept 3
 
-We chose Concept 3 because it combines the most valuable strengths of Concept 1 and Concept 2 into one realistic build. Compared to Concept 1, Concept 3 keeps the key “smart” benefits (waypoint navigation, hazard scoring, telemetry + FPV) but avoids heavy autonomy complexity that increases implementation risk and debugging time. Compared to Concept 2, Concept 3 keeps the core practical build advantages (throwable deployment, replaceable shell, replaceable battery, reliability-focused design) while adding essential awareness tools (FPV + telemetry + hazard score + prompts) that make the device safer and easier to use. Overall, Concept 3 provides the best balance of feasibility, safety, usability, and mission effectiveness—making it the strongest option to build. This aligns directly with our team mission: to deliver a modular, throwable amphibious scout that provides operators actionable data from environments too perilous for humans like modular, throwable, tactical.
+After evaluating all three concepts against our team constraints, timeline, and EGR314 requirements, the team agreed on Concept 3 through a structured comparison process. We scored each concept on feasibility, safety, usability, and mission effectiveness, and Concept 3 consistently ranked highest across all categories.
+
+We chose Concept 3 because it combines the most valuable strengths of Concept 1 and Concept 2 into one realistic build. Compared to Concept 1, Concept 3 keeps the key smart benefits such as waypoint navigation, hazard scoring, and telemetry with FPV but avoids heavy autonomy complexity that increases implementation risk and debugging time. Compared to Concept 2, Concept 3 keeps the core practical build advantages like throwable deployment, replaceable shell, and reliability-focused design while adding essential awareness tools that make the device safer and easier to use. Overall Concept 3 provides the best balance of feasibility, safety, usability, and mission effectiveness, making it the strongest option to build and aligning directly with our team mission to deliver a modular throwable amphibious scout.
 
 ## What cues will make the device easier to use?
 

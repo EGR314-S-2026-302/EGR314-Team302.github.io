@@ -25,7 +25,10 @@ ESP32 Wireless Gateway → Sensor + HMI PIC → Actuator PIC
 
 Messages propagate from one microcontroller to the next using structured UART frames until the destination address matches the receiving board.
 
-See the Individual Block Diagrams section for detailed subsystem-level diagrams.
+See the individual subsystem block diagrams for detailed layouts:
+[Mihir Patel](https://mihir-patel-64.github.io/02-Block-Diagram/Block-Diagram/),
+[Lakshanand Sugumar](https://lakshanandsugumar.github.io),
+[Raunak Singh](https://ronnie772.github.io/Ronnie772Datasheet/)
 
 ---
 
@@ -129,7 +132,7 @@ This prevents high-current motor activity from causing brownout conditions on th
 
 ### Real-Time Feedback (< 500 ms)
 
-The FPV camera stream targets under 500 ms end-to-end latency over Wi-Fi. The UART daisy-chain uses deterministic packet forwarding, ensuring predictable latency for sensor data and actuator commands between boards.
+The FPV camera stream was designed to target under 500 ms end-to-end latency over Wi-Fi, though live streaming was not demonstrated on the final hardware. The UART daisy-chain uses deterministic packet forwarding, ensuring predictable latency for sensor data and actuator commands between boards.
 
 Local I²C and PWM communication operate at microcontroller clock speeds, enabling near real-time actuation and hazard reporting.
 

@@ -9,79 +9,68 @@ tags:
 
 The purpose of this section is to translate the features of the selected design concept into clear, measurable engineering requirements. These requirements define the minimum functionality needed for the system to be considered successful, as well as target goals and optional stretch objectives. Together, they guide subsystem design, team responsibility, and verification throughout the project.
 
----
-
 ## Team-Level Project Requirements
 
 This table defines the overall system requirements for the exploration device. Each requirement is tied directly to a feature from the selected design concept and includes a minimum threshold, a target goal, and whether it is considered a stretch requirement.
 
-| Requirement Description | Measure of Threshold | Target Measure | Feature Addressed | Stretch (Yes/No) |
-|------------------------|------------------|-------------|------------------|------------------|
-| The system must support wireless communication with the user | One-way Wi-Fi communication | Two-way Wi-Fi using MQTT | MQTT Wireless communication | No |
-| The system must provide live video feedback | Video stream available | Video latency under 500 ms | FPV camera | No |
-| The robot must be able to move forward and backward | Basic bidirectional motion | Smooth, speed-controlled motion | Wheeled propulsion | No |
-| The system must support an emergency stop | Stop within 1 second | Stop within 250 ms | Emergency stop | No |
-| The system must calculate a hazard score from sensor data | Safe / unsafe indication | Scaled hazard score (0–100) | Hazard scoring algorithm | Yes |
-| The system must display information locally | Text-only display | Text with simple graphics | OLED HMI | No |
-| The system must report orientation and motion | IMU detected | Stable IMU data ≥ 50 Hz | IMU sensor | No |
-| The system must operate on a replaceable battery | ≥ 5 minutes runtime | ≥ 15 minutes runtime | Replaceable battery pack | No |
-| The system must protect itself from overheating | Warning issued | Automatic thermal shutdown | Thermal protection | Yes |
-| The system must use modular UART communication across all three boards | UART link established between two boards | CRC-checked UART daisy-chain across all three subsystems | UART daisy chain | No |
-| The system must reset quickly for repeated demos | Manual reset | Reset time under 10 seconds | Fast reset sequence | No |
-
----
+| Requirement Description | Measure of Threshold | Target Measure | Feature Addressed | Stretch (Yes/No) | Final Result |
+|------------------------|----------------------|----------------|-------------------|------------------|--------------|
+| The system must support wireless communication with the user | One-way Wi-Fi communication | Two-way Wi-Fi using MQTT | MQTT Wireless communication | No | Met |
+| The system must provide live video feedback | Video stream available | Video latency under 500 ms | FPV camera | No | ⚠️ Not demonstrated on final hardware |
+| The robot must be able to move forward and backward | Basic bidirectional motion | Smooth, speed-controlled motion | Wheeled propulsion | No | Met |
+| The system must support an emergency stop | Stop within 1 second | Stop within 250 ms | Emergency stop | No | Met |
+| The system must calculate a hazard score from sensor data | Safe / unsafe indication | Scaled hazard score (0–100) | Hazard scoring algorithm | Yes | Met |
+| The system must display information locally | Text-only display | Text with simple graphics | OLED HMI | No | Met |
+| The system must report orientation and motion | IMU detected | Stable IMU data ≥ 50 Hz | IMU sensor | No | Met |
+| The system must operate on a replaceable battery | ≥ 5 minutes runtime | ≥ 15 minutes runtime | Replaceable battery pack | No | Met |
+| The system must protect itself from overheating | Warning issued | Automatic thermal shutdown | Thermal protection | Yes | Met |
+| The system must use modular UART communication across all three boards | UART link established between two boards | CRC-checked UART daisy-chain across all three subsystems | UART daisy chain | No | Met |
+| The system must reset quickly for repeated demos | Manual reset | Reset time under 10 seconds | Fast reset sequence | No | Met |
 
 ## Module-Level Requirements
 
 Each subsystem has its own set of requirements that support the overall system functionality. These module-level requirements ensure that each team member is responsible for a critical portion of the system.
 
----
-
-### Module Requirements — Wireless Communication (ESP32)  
+### Module Requirements — Wireless Communication (ESP32)
 **Teammate A: Mihir Patel**
 
-| Requirement Description | Measure of Threshold | Target Measure | Stretch (Yes/No) |
-|------------------------|------------------|-------------|------------------|
-| SMD 3.3 V switching regulator | Output ≥ 3.2 V | Stable 3.3 V output | No |
-| ESP32 microcontroller | Boots successfully | Runs Wi-Fi and MQTT | No |
-| Wireless communication | One-way data transfer | Two-way MQTT messaging | No |
-| UART communication with system bus | Basic TX/RX | Structured packets with CRC | No |
-| Video data handling | Video stream present | Stable low-latency stream | Yes |
-| Connection loss handling | Detect disconnection | Trigger safe-stop behavior | Yes |
+| Requirement Description | Measure of Threshold | Target Measure | Stretch (Yes/No) | Final Result |
+|------------------------|----------------------|----------------|------------------|--------------|
+| SMD 3.3 V switching regulator | Output ≥ 3.2 V | Stable 3.3 V output | No | Met - AP63203WU-7 produced stable 3.3V under full load |
+| ESP32 microcontroller | Boots successfully | Runs Wi-Fi and MQTT | No | Met - ESP32-S3 booted reliably and connected to MQTT broker |
+| Wireless communication | One-way data transfer | Two-way MQTT messaging | No | Met - Full publish/subscribe MQTT messaging achieved |
+| UART communication with system bus | Basic TX/RX | Structured packets with CRC | No | Met - 64-byte structured UART packets implemented and forwarded |
+| Video data handling | Video stream present | Stable low-latency stream | Yes | Partially Met - Camera firmware fully implemented but not demonstrated on final hardware |
+| Connection loss handling | Detect disconnection | Trigger safe-stop behavior | Yes | Met - WiFi failsafe implemented and verified |
 
----
-
-### Module Requirements — Sensor & HMI (PIC)  
+### Module Requirements — Sensor & HMI (PIC)
 **Teammate B: Lakshanand Sugumar**
 
-| Requirement Description | Measure of Threshold | Target Measure | Stretch (Yes/No) |
-|------------------------|------------------|-------------|------------------|
-| SMD PIC microcontroller | Main loop runs | Interrupt-driven firmware | No |
-| Serial sensor interface | IMU detected | Stable IMU data ≥ 50 Hz | No |
-| OLED display | Text output visible | Text with simple graphics | No |
-| Pushbutton input | Button press detected | Debounced, interrupt-based | No |
-| Hazard score output | Binary indicator | Scaled hazard score | Yes |
-| UART communication | Basic messaging | Structured sensor messages | No |
+| Requirement Description | Measure of Threshold | Target Measure | Stretch (Yes/No) | Final Result |
+|------------------------|----------------------|----------------|------------------|--------------|
+| SMD PIC microcontroller | Main loop runs | Interrupt-driven firmware | No | Met |
+| Serial sensor interface | IMU detected | Stable IMU data ≥ 50 Hz | No | Met |
+| OLED display | Text output visible | Text with simple graphics | No | Met |
+| Pushbutton input | Button press detected | Debounced, interrupt-based | No | Met |
+| Hazard score output | Binary indicator | Scaled hazard score | Yes | Met |
+| UART communication | Basic messaging | Structured sensor messages | No | Met |
 
----
-
-### Module Requirements — Actuator Control (PIC)  
+### Module Requirements — Actuator Control (PIC)
 **Teammate C: Raunak Singh**
 
-| Requirement Description | Measure of Threshold | Target Measure | Stretch (Yes/No) |
-|------------------------|------------------|-------------|------------------|
-| Motor control | Forward/backward motion | Speed-controlled driving | No |
-| Motor driver interface | Driver responds | PWM with current limiting | No |
-| Emergency stop response | Stop within 1 second | Stop within 250 ms | No |
-| Overcurrent protection | Warning only | Automatic motor shutdown | Yes |
-| Thermal protection | Warning issued | Automatic shutdown | Yes |
-| UART status reporting | Basic motor state | Motor telemetry reporting | No |
-
----
+| Requirement Description | Measure of Threshold | Target Measure | Stretch (Yes/No) | Final Result |
+|------------------------|----------------------|----------------|------------------|--------------|
+| Motor control | Forward/backward motion | Speed-controlled driving | No | Met |
+| Motor driver interface | Driver responds | PWM with current limiting | No | Met |
+| Emergency stop response | Stop within 1 second | Stop within 250 ms | No | Met |
+| Overcurrent protection | Warning only | Automatic motor shutdown | Yes | Met |
+| Thermal protection | Warning issued | Automatic shutdown | Yes | Met |
+| UART status reporting | Basic motor state | Motor telemetry reporting | No | Met |
 
 ## Requirement Ownership by Team Member
 
-The table below assigns each major requirement area to the responsible team member and subsystem.
+The table below assigns each major requirement area to the responsible team
+member and subsystem.
 
 | Requirement Area | Team Member | Subsystem |
 |------------------|-------------|-----------|
@@ -92,8 +81,6 @@ The table below assigns each major requirement area to the responsible team memb
 | Motor control and movement | Raunak Singh | PIC Actuator Control |
 | Emergency stop and safety behavior | Raunak Singh | PIC Actuator Control |
 | UART communication and system integration | All teammates | System-level |
-
----
 
 ## Feature-to-Requirement Development and Design Rationale
 
@@ -107,11 +94,7 @@ To keep the design focused and manageable, requirements were ranked by importanc
 
 **Feature-to-Requirement Translation**
 
-The need to explore environments efficiently led to requirements for controlled mobility, including bidirectional motor control, speed regulation, and emergency stop behavior. Safety concerns added requirements for overcurrent and thermal protection.
-Accurate data collection was another key goal, resulting in requirements for consistent sensor detection, minimum data rates, and hazard scoring to convert raw sensor readings into useful information.
-To reduce human involvement in the operating environment, the system requires wireless communication for remote monitoring and control, with two-way messaging and live video identified as target capabilities.
-A local human–machine interface was included to provide immediate feedback and allow manual input through readable displays and reliable pushbuttons.
-Finally, the system was designed to be modular, using structured UART communication so future sensors, actuators, or expansion boards can be added without redesigning the core system.
+The need to explore environments efficiently led to requirements for controlled mobility, including bidirectional motor control, speed regulation, and emergency stop behavior. Safety concerns added requirements for overcurrent and thermal protection. Accurate data collection was another key goal, resulting in requirements for consistent sensor detection, minimum data rates, and hazard scoring to convert raw sensor readings into useful information. To reduce human involvement in the operating environment, the system requires wireless communication for remote monitoring and control, with two-way messaging and live video identified as target capabilities. A local human-machine interface was included to provide immediate feedback and allow manual input through readable displays and reliable pushbuttons. Finally, the system was designed to be modular, using structured UART communication so future sensors, actuators, or expansion boards can be added without redesigning the core system.
 
 **Stakeholder Considerations**
 

@@ -9,152 +9,95 @@ tags:
 
 ![Team 302 Process Diagram](Team302_process_diagram.drawio.png)
 
----
-
 # Communication Sequence Functionality & Requirements Alignment
 
-Our sequence diagram captures the end-to-end flow of data and control between the Web User, ESP32 Wireless Gateway (Mihir), Sensor + HMI subsystem (Lakshanand), and Actuator Control subsystem (Raunak). Below we break down each major functional step and explain how it satisfies user needs and system requirements.
-
----
+Our sequence diagram captures the end-to-end flow of data and control between
+the Web User, ESP32 Wireless Gateway (Mihir), Sensor + HMI subsystem
+(Lakshanand), and Actuator Control subsystem (Raunak). Below we break down
+each major functional step and explain how it satisfies user needs and system
+requirements.
 
 ## 1. User-Initiated Drive Command
 
-### Flow:
+The web user inputs a drive command such as set speed to 200 RPM using the web
+dashboard. The MQTT broker delivers it to the ESP32 which frames a 64-byte UART
+packet addressed to the Actuator board and sends it downstream. The Sensor board
+sees the destination is not its own ID and forwards the frame unchanged. The
+Actuator board processes the command and updates its PWM outputs to set motor
+speed.
 
-1. Web User → MQTT Server  
-   - User inputs a drive command (e.g., set speed to 200 RPM) using the web dashboard.
-
-2. MQTT Server → ESP32 (Wireless Subsystem)  
-   - ESP32 subscribes to a control topic and receives the DRIVE_CMD message.
-
-3. ESP32 → Sensor + HMI PIC via UART  
-   - ESP32 frames a UART message containing the drive command (Source = ESP32, Destination = Actuator Board).
-
-4. Sensor + HMI PIC → Actuator PIC via UART  
-   - Since the message is not addressed to the Sensor board, it forwards the frame downstream unchanged.
-
-5. Actuator PIC → Motor Driver  
-   - Actuator board processes the command and updates PWM outputs to set motor speed.
-
-### Function & Benefits:
-
-- **Remote Control Capability:** Enables safe operation from a distance.
-- **Modular Message Forwarding:** Demonstrates correct daisy-chain propagation (no direct A → C communication).
-- **Standards-Based Architecture:** Structured UART frames allow deterministic routing and easy debugging.
-
----
+This flow enables safe remote operation from a distance and demonstrates correct
+daisy-chain propagation where no direct ESP32 to Actuator communication happens.
+The structured UART frames allow deterministic routing and easy debugging.
 
 ## 2. Telemetry Reporting & Hazard Calculation
 
-### Flow:
+The Actuator PIC sends motor telemetry including current speed and state upstream
+to the Sensor board. The Sensor board reads its own IMU and temperature data,
+computes a hazard score, and forwards the combined data upstream to the ESP32.
+The ESP32 publishes the telemetry and hazard score to the MQTT broker and the
+web dashboard updates in real time.
 
-1. Actuator PIC → Sensor + HMI PIC  
-   - Sends motor telemetry (current speed, state).
-
-2. Sensor + HMI PIC → ESP32
-   - Reads IMU and temperature sensor data.
-   - Computes hazard score from sensor readings.
-   - Forwards motor telemetry and appends sensor data and hazard score into the outgoing upstream frame.
-
-3. ESP32 → MQTT Server  
-   - Publishes telemetry and hazard score to the cloud.
-
-4. MQTT Server → Web User  
-   - Web dashboard updates in real time.
-
-### Function & Benefits:
-
-- **Real-Time Feedback:** Ensures live situational awareness.
-- **Hazard Abstraction:** Converts raw sensor data into a simplified hazard score.
-- **Bi-Directional Communication:** Both commands and telemetry use the same structured pathway.
-
----
+This ensures live situational awareness for the remote operator and converts raw
+sensor readings into a simplified hazard score. Both commands and telemetry use
+the same structured pathway in opposite directions.
 
 ## 3. Local HMI Display Update
 
-### Flow:
+On each telemetry cycle the Sensor + HMI PIC reads its local sensor data and
+receives motor telemetry from the Actuator board. It computes an updated hazard
+score and pushes the result to the OLED display via I2C. Anyone physically near
+the device can view live speed, hazard score, and system status without needing
+the web dashboard.
 
-1. Sensor + HMI PIC
-   - On each telemetry cycle, reads local sensor data and receives motor telemetry from the Actuator board.
-   - Computes updated hazard score and updates OLED display via I²C.
+This provides immediate local feedback and educational transparency so showcase
+visitors can trace the sensor to computation to display pipeline directly.
 
-2. In-Person User  
-   - Views live speed, hazard score, and system status on OLED.
+## 4. Recurring Telemetry Loop
 
-### Function & Benefits:
-
-- **Immediate Local Feedback:** Demonstrates system operation without web dependency.
-- **Educational Transparency:** Viewers can trace sensor → computation → display.
-
----
-
-## 4. Recurring Telemetry Loop (Every 1 Second)
-
-### Flow:
-
-1. Sensor + HMI PIC → ESP32 via UART  
-   - Sends periodic sensor data (IMU, temperature, hazard score).
-
-2. ESP32 → MQTT Server  
-   - Publishes telemetry update.
-
-### Function & Benefits:
-
-- **Deterministic Timing:** Ensures system remains under sub-second update target.
-- **Continuous Monitoring:** Enables stable remote supervision during demos.
-
----
+Every second the Sensor + HMI PIC sends periodic sensor data including IMU
+readings, temperature, and hazard score upstream to the ESP32 via UART. The
+ESP32 publishes the update to the MQTT broker. This ensures the system stays
+under the sub-second update target and enables stable remote supervision during
+demos.
 
 ## 5. Emergency Stop & Safety Handling
 
-### Flow:
+When the in-person user presses the Emergency Stop button on the HMI, the
+Sensor + HMI PIC sends an EMERGENCY_STOP frame downstream. The Actuator PIC
+immediately disables motor outputs and sends an ACK_STOP frame upstream. The
+ESP32 publishes the emergency status to the MQTT broker and the web user receives
+a fault notification.
 
-1. In-Person User presses Emergency Stop button (HMI).
-2. Sensor + HMI PIC sends EMERGENCY_STOP frame downstream.
-3. Actuator PIC immediately disables motor outputs.
-4. Actuator PIC sends ACK_STOP upstream.
-5. ESP32 publishes emergency status to MQTT.
-6. Web User receives fault notification.
-
-### Function & Benefits:
-
-- **Fail-Safe Operation:** Immediate motor shutdown prevents unsafe behavior.
-- **Clear Error Propagation:** Faults travel both upstream and downstream.
-- **User Safety Compliance:** Meets safety requirements for public demonstrations.
-
---- 
+This provides immediate motor shutdown to prevent unsafe behavior. Faults travel
+both upstream and downstream so the entire system is aware of the fault condition,
+meeting safety requirements for public demonstrations.
 
 ## 6. Wireless Link Loss & Safe-Stop Fallback
 
-### Flow:
+When the ESP32 detects MQTT connection loss it sends a SAFE_STOP frame downstream
+via UART. The Sensor + HMI PIC forwards the frame to the Actuator PIC which
+disables motor outputs. The OLED displays a connection lost status so anyone
+near the device knows the wireless link is down.
 
-1. ESP32 detects MQTT connection loss.
-2. ESP32 sends SAFE_STOP frame downstream via UART.
-3. Sensor + HMI PIC forwards frame to Actuator PIC.
-4. Actuator PIC disables motor outputs.
-5. OLED displays connection lost status.
-
-### Function & Benefits:
-
-- **Automatic Failsafe:** Motors halt without any user action required.
-- **Requirement Coverage:** Directly satisfies the connection loss handling 
-  requirement.
-
----
+Motors halt without any user action required. This directly satisfies the
+connection loss handling requirement and ensures the robot does not continue
+operating uncontrolled if the wireless link drops.
 
 # Summary of Functional Alignment
 
-### Latency & Predictability
-Structured UART forwarding ensures consistent propagation time between boards.
+**Latency and Predictability** - Structured UART forwarding ensures consistent
+propagation time between boards.
 
-### Bi-Directional Control
-Both web-based commands and in-person HMI inputs are supported.
+**Bi-Directional Control** - Both web-based commands and in-person HMI inputs
+are supported simultaneously.
 
-### Modularity & Scalability
-Each board forwards or consumes frames based on destination ID, allowing future expansion.
+**Modularity and Scalability** - Each board forwards or consumes frames based
+on destination ID, allowing future expansion without changing the protocol.
 
-### Educational Clarity
-The sequence explicitly shows every hop in the daisy chain, reinforcing modular architecture understanding.
+**Educational Clarity** - The sequence explicitly shows every hop in the daisy
+chain, reinforcing modular architecture understanding for showcase visitors.
 
-### Reliability & Safety
-Emergency stop, wireless link loss detection, acknowledgment frames, and telemetry monitoring ensure stable system behavior under both user-triggered and automatic fault conditions.
+**Reliability and Safety** - Emergency stop, wireless link loss detection,
+acknowledgment frames, and telemetry monitoring ensure stable system behavior
+under both user-triggered and automatic fault conditions.
