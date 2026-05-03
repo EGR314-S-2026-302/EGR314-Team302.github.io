@@ -1,15 +1,26 @@
-site_name: EGR314 R6 Recon Amphibot Project Report
+site_name: EGR314 Team 302 - R6 Recon Amphibot
 site_url: https://egr314-s-2026-302.github.io/EGR314-Team302.github.io/
-repo_url: https://github.com/Mihir-Patel-64/Mihir-Patel-64.github.io
+repo_url: https://github.com/egr314-s-2026-302/EGR314-Team302.github.io
 edit_uri: edit/main/docs/
 theme:
   name: material
   custom_dir: custom_theme/
   palette:
-    primary: blue
-    accent: indigo
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   font:
-    text: Roboto
+    text: Inter
+    code: Roboto Mono
   logo: static/logo-314.svg
   favicon: static/logo_314.png
 
@@ -23,13 +34,10 @@ theme:
     - navigation.prune
     - content.action.edit
     - navigation.footer
-#    - navigation.sections
-#    - navigation.expand
-#    - navigation.instant # doesn't work that well
 
 markdown_extensions:
-  - attr_list #add attributes using curly brackets to images, see https://squidfunk.github.io/mkdocs-material/reference/images/
-  - md_in_html # see https://squidfunk.github.io/mkdocs-material/reference/images/
+  - attr_list
+  - md_in_html
   - footnotes
   - pymdownx.arithmatex:
       generic: true
@@ -47,7 +55,7 @@ draft_docs: |
   
 plugins:
   - search
-  - glightbox # allow resize images, see https://squidfunk.github.io/mkdocs-material/reference/images/
+  - glightbox
 
 extra_css:
   - stylesheets/extra.css  
@@ -59,11 +67,11 @@ extra_javascript:
 not_in_nav: |
   static
   
-copyright: "Copyright &copy; 2026 Team 302"
+copyright: "Copyright &copy; 2026 Team XPED - Team 302 EGR314"
 
 extra:
   generator: false
   social:
-    - icon: fontawesome/regular/file-code
-      link: /2023_fall
-      name: 2023 Site    
+    - icon: fontawesome/brands/github
+      link: https://github.com/egr314-s-2026-302/EGR314-Team302.github.io
+      name: Team 302 on GitHub
