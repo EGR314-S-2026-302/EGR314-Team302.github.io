@@ -5,6 +5,8 @@ tags:
 - Concept Generation and Design Ideation
 ---
 
+# Concept Generation and Design Ideation
+
 ## Goal of the Exploration Device
 
 The goal of our exploration device is to safely collect meaningful environmental information from hazardous or inaccessible environments while minimizing operator risk. The Amphibot V1 is designed to scout unknown terrain, provide real-time visual and sensor feedback, and communicate system state clearly to the operator. The device emphasizes modularity, rapid deployment, and observable cause-and-effect interactions between user input and system response.
