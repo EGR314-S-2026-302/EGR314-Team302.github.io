@@ -7,7 +7,8 @@ tags:
 
 # Block Diagram
 
-  <img width="2781" height="1161" alt="image" src="https://github.com/user-attachments/assets/97a6a93b-d36e-4f87-add0-40805d1aba75" />
+  <img width="2901" height="1101" alt="image" src="https://github.com/user-attachments/assets/8a30fd5a-dd57-46cb-9761-aa214dc9788e" />
+
 
 
 ---
@@ -200,5 +201,6 @@ Together, these decisions produce a system that is modular, verifiable at the su
 
 ## Resources
 
-The Block Diagram as a pdf is available [*here*](https://github.com/user-attachments/files/27382840/EGR314-team.block.diagram.drawio.pdf)
+The Block Diagram as a pdf is available [*here*](https://github.com/user-attachments/files/27383580/EGR314_Team302_Blockdiagram.drawio.pdf)
+
 
