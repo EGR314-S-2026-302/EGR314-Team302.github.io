@@ -70,7 +70,8 @@ links below:
 - **[Team Organization](01-Organization/Team-Organization.md)** – Charter, mission, roles, and communication protocols
 - **[Concept Design](02-Concept-Design/Design.md)** – Ideation process, R6 amphibot selection, key features
 - **[Project Requirements](03-Project-Requirements/Project-Requirements.md)** – UART specs, serial peripherals, performance targets
-- **[Team Block Diagram](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/Team-Block-Diagram/Team-Block-Diagram.md)** – 3-PCB daisy chain, data flow, interfaces
-- **[Team Process Diagram](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/Communication-Process-Diagram/Communication-Process-Diagram.md)** – Sequence diagram, message flow, user interactions
-- **[Message Types](04-Block-Diagram,-Process-Diagram,-and-Message-Structure/Message-Structure/Message-Structure.md)** – 64-byte packet format, byte-level definitions
+- **[Team Block Diagram](04-Block-Diagram-Process-Diagram-and-Message-Structure/Team-Block-Diagram/Team-Block-Diagram.md)** – 3-PCB daisy chain, data flow, interfaces
+- **[Team Process Diagram](04-Block-Diagram-Process-Diagram-and-Message-Structure/Communication-Process-Diagram/Communication-Process-Diagram.md)** – Sequence diagram, message flow, user interactions
+- **[Message Types](04-Block-Diagram-Process-Diagram-and-Message-Structure/Message-Structure/Message-Structure.md)** – 64-byte packet format, byte-level definitions
 - **[Showcase and Prototype](05-Showcase-Demostration/Showcase.md)** – Innovation Showcase poster, final system photos, and demo video
+- **[Project Version 2.0](06-Project-Version-2.0/Project_version_2.0.md)** – Future improvements, hardware upgrades, and protocol enhancements
