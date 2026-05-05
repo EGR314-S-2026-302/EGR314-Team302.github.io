@@ -195,3 +195,10 @@ If wireless communication is lost:
 ---
 
 Together, these decisions produce a system that is modular, verifiable at the subsystem level, and straightforward to demonstrate at the Innovation Showcase.
+
+---
+
+## Resources
+
+The Block Diagram as a pdf is available [*here*](https://github.com/user-attachments/files/27382840/EGR314-team.block.diagram.drawio.pdf)
+
