@@ -7,7 +7,8 @@ tags:
 
 # Block Diagram
 
-![Team 302 Block Diagram](EGR314_Team302_Blockdiagram_3_5.drawio.png)
+  <img width="2781" height="1161" alt="image" src="https://github.com/user-attachments/assets/97a6a93b-d36e-4f87-add0-40805d1aba75" />
+
 
 ---
 
