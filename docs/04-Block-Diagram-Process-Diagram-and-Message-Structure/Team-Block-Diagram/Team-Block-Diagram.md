@@ -7,7 +7,8 @@ tags:
 
 # Block Diagram
 
-![Team 302 Block Diagram](EGR314_Team302_Blockdiagram_3_5.drawio.png)
+  <img width="2781" height="1161" alt="image" src="https://github.com/user-attachments/assets/97a6a93b-d36e-4f87-add0-40805d1aba75" />
+
 
 ---
 
@@ -194,3 +195,10 @@ If wireless communication is lost:
 ---
 
 Together, these decisions produce a system that is modular, verifiable at the subsystem level, and straightforward to demonstrate at the Innovation Showcase.
+
+---
+
+## Resources
+
+The Block Diagram as a pdf is available [*here*](https://github.com/user-attachments/files/27382840/EGR314-team.block.diagram.drawio.pdf)
+

@@ -21,7 +21,7 @@ The OLED display in V1 was small and difficult to read from a distance during th
 
 **Actuator Board (Raunak)**
 
-The motor driver in V1 required careful current limiting to avoid overheating during extended operation. In V2 we would select a motor driver with a higher continuous current rating and better thermal management, including an onboard thermal pad and better copper pours around the driver IC. We would also add encoders to the motors to enable proper closed-loop speed control, which would make the PID implementation more accurate and stable across different surface conditions.
+In V2.0 the actuator board would undergo several targeted improvements based on issues encountered during V1 assembly and integration. The **team communication header footprints** were undersized in V1, requiring jumper wires to connect to the other subsystem boards this would be corrected to match the physical connectors used across the team, allowing direct and clean connections. The **L7806ABD2T 6V voltage regulator footprint** sourced from DigiKey was also incorrect and required rework during assembly; going forward, all component footprints would be manually verified against manufacturer datasheets before fabrication. The most significant functional improvement would be extending the **UART communication protocol** to support variable speed commands, allowing the HMI to dynamically adjust motor speed rather than operating at a fixed duty cycle. Finally, the board would be redesigned around a **four-motor architecture**, adding two additional **IFX9201SGAUMA1** H-bridge drivers to cover all four of the Amphibot's motors, two drive wheels and two propellers.
 
 **Chassis and Mechanical Design**
 

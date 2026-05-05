@@ -101,3 +101,8 @@ chain, reinforcing modular architecture understanding for showcase visitors.
 **Reliability and Safety** - Emergency stop, wireless link loss detection,
 acknowledgment frames, and telemetry monitoring ensure stable system behavior
 under both user-triggered and automatic fault conditions.
+
+---
+
+## Resources
+The Process Diagram as a PDF is available [*here*](https://github.com/user-attachments/files/27382885/Team302_process_diagram.drawio.pdf)
